@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extends_RC01_Highways_Defects__c</fullName>
+    <description>Condition of road</description>
+    <externalId>false</externalId>
+    <label>Highway Defects</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pothole</fullName>
+                <default>false</default>
+                <label>Pothole</label>
+            </value>
+            <value>
+                <fullName>Obstruction</fullName>
+                <default>false</default>
+                <label>Obstruction</label>
+            </value>
+            <value>
+                <fullName>Cracked or Damaged</fullName>
+                <default>false</default>
+                <label>Cracked or Damaged</label>
+            </value>
+            <value>
+                <fullName>Mud on Road</fullName>
+                <default>false</default>
+                <label>Mud on Road</label>
+            </value>
+            <value>
+                <fullName>Spill, Oil or Diesel</fullName>
+                <default>false</default>
+                <label>Spill, Oil or Diesel</label>
+            </value>
+            <value>
+                <fullName>Damaged Speed Bumps</fullName>
+                <default>false</default>
+                <label>Damaged Speed Bumps</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Elapsed__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(LastModifiedDate -  CreatedDate &lt;1, &quot;Less 1 Day&quot;,
+ If(LastModifiedDate -  CreatedDate &lt;10, &quot;Less 10 Days&quot;,
+  If(LastModifiedDate -  CreatedDate &lt;30, &quot;Less 30 Days&quot;, &quot;More 30&quot;)
+ )
+)</formula>
+    <label>Days Elapsed</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

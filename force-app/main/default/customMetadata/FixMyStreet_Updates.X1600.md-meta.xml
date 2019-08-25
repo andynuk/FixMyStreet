@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>1600</label>
+    <protected>false</protected>
+    <values>
+        <field>Closed__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Fixed__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Status__c</field>
+        <value xsi:type="xsd:string">Other Council Department</value>
+    </values>
+    <values>
+        <field>Update_Text__c</field>
+        <value xsi:type="xsd:string">Thank you for your report. We have now inspected the defect and this has been referred to the correct department for action.  We have passed your report on to them. Thank you for reporting this matter and this report is now closed.</value>
+    </values>
+</CustomMetadata>

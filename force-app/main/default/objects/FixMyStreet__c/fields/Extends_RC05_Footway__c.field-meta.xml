@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extends_RC05_Footway__c</fullName>
+    <externalId>false</externalId>
+    <label>Footway or Footpath</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Damaged or Cracked</fullName>
+                <default>false</default>
+                <label>Damaged or Cracked</label>
+            </value>
+            <value>
+                <fullName>Pothole</fullName>
+                <default>false</default>
+                <label>Pothole</label>
+            </value>
+            <value>
+                <fullName>Slabs uneven or missing</fullName>
+                <default>false</default>
+                <label>Slabs uneven or missing</label>
+            </value>
+            <value>
+                <fullName>Failed Reinstatement</fullName>
+                <default>false</default>
+                <label>Failed Reinstatement</label>
+            </value>
+            <value>
+                <fullName>Obstruction</fullName>
+                <default>false</default>
+                <label>Obstruction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

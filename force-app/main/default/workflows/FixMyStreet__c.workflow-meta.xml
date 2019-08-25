@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>FixMyStreet_Email_to_BackOffice_Ben</fullName>
+        <description>FixMyStreet Email to BackOffice - Waste_Ben</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>anix-rv7r@force.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>anix@rutland.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>FixMyStreet/Email_to_BackOffice</template>
+    </alerts>
+    <alerts>
+        <fullName>FixMyStreet_Email_to_BackOffice_Highways</fullName>
+        <ccEmails>highways@rutland.gov.uk</ccEmails>
+        <ccEmails>anix@rutland.gov.uk</ccEmails>
+        <description>FixMyStreet Email to BackOffice - Highways</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>anix-rv7r@force.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>anix@rutland.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>FixMyStreet/Email_to_BackOffice</template>
+    </alerts>
+    <alerts>
+        <fullName>FixMyStreet_Email_to_BackOffice_Peter</fullName>
+        <description>FixMyStreet Email to BackOffice - Waste_Peter</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>anix-rv7r@force.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>anix@rutland.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>FixMyStreet/Email_to_BackOffice</template>
+    </alerts>
+    <alerts>
+        <fullName>FixMyStreet_Email_to_Customer</fullName>
+        <ccEmails>anix@rutland.gov.uk</ccEmails>
+        <description>FixMyStreet Email to Customer</description>
+        <protected>false</protected>
+        <senderAddress>anix@rutland.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>FixMyStreet/Email_to_Customer</template>
+    </alerts>
+    <alerts>
+        <fullName>FixMyStreet_Error</fullName>
+        <description>FixMyStreet Error</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>anix-rv7r@force.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Internal_Processes/FixMyStreet_Error</template>
+    </alerts>
+</Workflow>

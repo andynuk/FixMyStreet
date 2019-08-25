@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Area_Detail__c</fullName>
+    <externalId>false</externalId>
+    <label>Service Area - Detail</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Service_Area__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Missed Bin</fullName>
+                <default>false</default>
+                <label>Missed Bin</label>
+            </value>
+            <value>
+                <fullName>Damaged Bin</fullName>
+                <default>false</default>
+                <label>Damaged Bin</label>
+            </value>
+            <value>
+                <fullName>Replacement Bin</fullName>
+                <default>false</default>
+                <label>Replacement Bin</label>
+            </value>
+            <value>
+                <fullName>Remove Bin</fullName>
+                <default>false</default>
+                <label>Remove Bin</label>
+            </value>
+            <value>
+                <fullName>Additional Bin</fullName>
+                <default>false</default>
+                <label>Additional Bin</label>
+            </value>
+            <value>
+                <fullName>New Property Bin</fullName>
+                <default>false</default>
+                <label>New Property Bin</label>
+            </value>
+            <value>
+                <fullName>Communal Bin Issue</fullName>
+                <default>false</default>
+                <label>Communal Bin Issue</label>
+            </value>
+            <value>
+                <fullName>Apply for Assisted Collection</fullName>
+                <default>false</default>
+                <label>Apply for Assisted Collection</label>
+            </value>
+            <value>
+                <fullName>Bulky Collection</fullName>
+                <default>false</default>
+                <label>Bulky Collection</label>
+            </value>
+            <value>
+                <fullName>General Waste</fullName>
+                <default>false</default>
+                <label>General Waste</label>
+            </value>
+            <value>
+                <fullName>Street Cleansing</fullName>
+                <default>false</default>
+                <label>Street Cleansing</label>
+            </value>
+            <value>
+                <fullName>Abandoned Vehicles</fullName>
+                <default>false</default>
+                <label>Abandoned Vehicles</label>
+            </value>
+            <value>
+                <fullName>Discarded Syringes</fullName>
+                <default>false</default>
+                <label>Discarded Syringes</label>
+            </value>
+            <value>
+                <fullName>Trees or Vegetation</fullName>
+                <default>false</default>
+                <label>Trees or Vegetation</label>
+            </value>
+            <value>
+                <fullName>Dead Animal</fullName>
+                <default>false</default>
+                <label>Dead Animal</label>
+            </value>
+            <value>
+                <fullName>Missed Grass Cutting</fullName>
+                <default>false</default>
+                <label>Missed Grass Cutting</label>
+            </value>
+            <value>
+                <fullName>Graffiti</fullName>
+                <default>false</default>
+                <label>Graffiti</label>
+            </value>
+            <value>
+                <fullName>Fly Tipping</fullName>
+                <default>false</default>
+                <label>Fly Tipping</label>
+            </value>
+            <value>
+                <fullName>Fly Posting</fullName>
+                <default>false</default>
+                <label>Fly Posting</label>
+            </value>
+            <value>
+                <fullName>Change of Circs</fullName>
+                <default>false</default>
+                <label>Change of Circs</label>
+            </value>
+            <value>
+                <fullName>Kerbs</fullName>
+                <default>false</default>
+                <label>Kerbs</label>
+            </value>
+            <value>
+                <fullName>Traffic Signals</fullName>
+                <default>false</default>
+                <label>Traffic Signals</label>
+            </value>
+            <value>
+                <fullName>Rights of Way</fullName>
+                <default>false</default>
+                <label>Rights of Way</label>
+            </value>
+            <value>
+                <fullName>Parking</fullName>
+                <default>false</default>
+                <label>Parking</label>
+            </value>
+            <value>
+                <fullName>Street Lighting</fullName>
+                <default>false</default>
+                <label>Street Lighting</label>
+            </value>
+            <value>
+                <fullName>Street Name Plate</fullName>
+                <default>false</default>
+                <label>Street Name Plate</label>
+            </value>
+            <value>
+                <fullName>Street Furniture</fullName>
+                <default>false</default>
+                <label>Street Furniture</label>
+            </value>
+            <value>
+                <fullName>Retaining Wall</fullName>
+                <default>false</default>
+                <label>Retaining Wall</label>
+            </value>
+            <value>
+                <fullName>Road Signage</fullName>
+                <default>false</default>
+                <label>Road Signage</label>
+            </value>
+            <value>
+                <fullName>Footway or Footpath</fullName>
+                <default>false</default>
+                <label>Footway or Footpath</label>
+            </value>
+            <value>
+                <fullName>Winter Maintenance</fullName>
+                <default>false</default>
+                <label>Winter Maintenance</label>
+            </value>
+            <value>
+                <fullName>Gully or Manhole</fullName>
+                <default>false</default>
+                <label>Gully or Manhole</label>
+            </value>
+            <value>
+                <fullName>Roads and Highways</fullName>
+                <default>false</default>
+                <label>Roads and Highways</label>
+            </value>
+            <value>
+                <fullName>Crash Barriers</fullName>
+                <default>false</default>
+                <label>Crash Barriers</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Missed Bin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Damaged Bin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Replacement Bin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Remove Bin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Additional Bin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>New Property Bin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Communal Bin Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Apply for Assisted Collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>Bulky Collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <valueName>General Waste</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Waste</controllingFieldValue>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Abandoned Vehicles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Street Cleansing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Discarded Syringes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Trees or Vegetation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Dead Animal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Missed Grass Cutting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Graffiti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Fly Tipping</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Street Scene</controllingFieldValue>
+            <valueName>Fly Posting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Kerbs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Traffic Signals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Rights of Way</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Parking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Street Lighting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Street Name Plate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Street Furniture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Retaining Wall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Road Signage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Footway or Footpath</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Winter Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Gully or Manhole</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Roads and Highways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Highways</controllingFieldValue>
+            <valueName>Crash Barriers</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RC06</fullName>
+    <active>true</active>
+    <label>RC06</label>
+    <picklistValues>
+        <picklist>Contractor_Description__c</picklist>
+        <values>
+            <fullName>Animal Carcases %28Not road kill%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asbestos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Bags Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Bags Household</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemical Drums%2COil%2C Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction%2FDemi%2FExcav</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other - Unidentified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Commercial Waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Electrical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Household Waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tyres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Parts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Goods</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contractor_Location__c</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial%2FIndustrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Council Land</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Footpath%2FBridleway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Highway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Railway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water Course%2FBank</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contractor_Size__c</picklist>
+        <values>
+            <fullName>Car Boot load or Less</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Single item</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Significant%2FMultiple Loads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Black Bag</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Van Load</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tipper Truck Load</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transit Van Load</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC01_Highways_Defects__c</picklist>
+        <values>
+            <fullName>Pothole</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC02_Grit_Bins__c</picklist>
+        <values>
+            <fullName>Grit Bin  - Missing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grit Bin %E2%80%93 Damaged</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Grit Bin %E2%80%93 Empty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Icy Footpath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Icy Road</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC03_Gully__c</picklist>
+        <values>
+            <fullName>Blocked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broken Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raised or Sunken</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC04_TreesVegetation__c</picklist>
+        <values>
+            <fullName>Fallen Tree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overgrown or Overhanging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restricted Visibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roots</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC05_Footway__c</picklist>
+        <values>
+            <fullName>Damaged or Cracked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed Reinstatement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obstruction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pothole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slabs uneven or missing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC06_Retaining_Wall__c</picklist>
+        <values>
+            <fullName>Damage to Structure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Hit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC07_Road_Signage__c</picklist>
+        <values>
+            <fullName>Damaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obscured by Vegetation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obscured or Dirty</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC08_Street_Furniture__c</picklist>
+        <values>
+            <fullName>Damaged Benches</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damaged Bollard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damaged Cycle Stand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damaged Railings</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC09_Street_Name_Plate__c</picklist>
+        <values>
+            <fullName>Damaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC10_Crash_Barriers__c</picklist>
+        <values>
+            <fullName>Damaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC11_Vehicle_Condition__c</picklist>
+        <values>
+            <fullName>Average Condition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good Condition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Condition</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC13_Street_Light_Issue__c</picklist>
+        <values>
+            <fullName>Damaged Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lamp Flickering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lamp Out</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC15_Discarded_Syringes__c</picklist>
+        <values>
+            <fullName>Capped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncapped</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC18_Graffiti_Type__c</picklist>
+        <values>
+            <fullName>Graphic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obscene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Political</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Racial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tagging</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC19_maintained_by_the_Council__c</picklist>
+        <values>
+            <fullName>Don%E2%80%99t Know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC20_Problem_Type__c</picklist>
+        <values>
+            <fullName>Broken Glass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leaves</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Litter Picking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overflowing Bins</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refuse%2FRecycling Spills</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC21_Parking_Issue__c</picklist>
+        <values>
+            <fullName>Obstructive%2FVerge parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pay and Display machine damaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pay and Display machine not working</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request new restrictions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC22_Rights_of_Way_Issue__c</picklist>
+        <values>
+            <fullName>Bridge Damaged%2FMissing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livestock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signs or way marking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stile</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC23_Kerb_Issue__c</picklist>
+        <values>
+            <fullName>Damaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extends_RC24_Traffic_Signals_Issue__c</picklist>
+        <values>
+            <fullName>Damaged or exposed wiring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lamp or bulb failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Timing Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signal Failure</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Action scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No further action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not responsible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Planned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

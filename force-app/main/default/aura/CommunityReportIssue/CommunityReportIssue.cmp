@@ -1,0 +1,74 @@
+<aura:component  controller="StreetLLPGController" implements="lightning:availableForFlowScreens" access="global">
+
+    
+    <aura:attribute name="Lat" type="Decimal"/>
+    <aura:attribute name="Long" type="Decimal"/>
+    <aura:attribute name="SiteCode" type="String" default=""/>
+    <aura:attribute name="ServiceArea" type="String"/>
+    <aura:attribute name="ServiceAreaId" type="String"/>
+    
+    <aura:attribute name="disableNext" type="string" default="true"/>
+    
+    
+    <!-- https://developer.salesforce.com/blogs/developer-relations/2015/11/lightning-map-component-revisited.html -->
+    
+    <ltng:require styles="/resource/leaflet/leaflet.css" />    
+    <ltng:require scripts="/resource/leaflet/leaflet.js"  afterScriptsLoaded="{!c.jsLoaded}" />
+	
+    <!-- The Leaflet map object -->
+    <aura:attribute name="map" type="Object"/>
+    <!-- The Leaflet markers -->
+    <aura:attribute name="marker" type="Object"/>
+    <aura:attribute name="oldMarker" type="Object"/>
+    <aura:attribute name="StreetId" type="String"/>
+    
+  <aura:handler event="c:EvtChangeLookup" action="{!c.handleLookupEvent}"/>
+  
+
+        <lightning:card >
+        <aura:set attribute="title">
+            click on the map where the problem is located
+<!--  			<aura:if isTrue="{!v.ServiceArea=='Highways'}">
+	            This is a highways issue so you need to select a street.
+			<aura:set attribute="else">
+		        Search for a street or click on the map where the problem is located. 
+			</aura:set>
+            </aura:if>-->
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:button variant="brand" label="Previous" onclick="{! c.handlePreviousClick}" />
+                    <lightning:button variant="brand" label="Next" onclick="{! c.handleClick}" disabled="{!v.disableNext}"/>
+                    <lightning:button variant="brand" label="Skip Map" onclick="{! c.handleClick}"/>
+  		<!--	<aura:if isTrue="{!v.ServiceArea=='Highways'}">
+                    <lightning:button variant="brand" label="Next" onclick="{! c.handleClick}" disabled="{!v.SiteCode==''}"/>
+                <aura:set attribute="else">
+                    <lightning:button variant="brand" label="Next" onclick="{! c.handleClick}" disabled="{!v.disableNext}"/>
+                    <lightning:button variant="brand" label="Skip Map" onclick="{! c.handleClick}"/>
+                </aura:set>
+            </aura:if> -->
+        </aura:set>
+ 
+<!--            <c:LightningLookup sObjectName="Street_LLPG__c" 
+                       displayedFieldName="Full_Description__c"
+                       valueFieldName="Id"
+                       label="Search Streets" 
+                       selectedValue="{!v.StreetId}"
+        			   required = "{!v.ServiceArea=='Highways'}"               
+                       />
+-->
+		
+           <!--
+             <div>{!v.marker}</div>
+	        <div>{!v.StreetId}</div>
+            <div>{!v.Lat}</div>
+            <div>{!v.Long}</div>
+            Lat: {!v.SWLat}, Lon: {!v.SWLong}
+-->
+ 		<div aura:id="mapid" style="height: 600px;"></div>  
+    </lightning:card>
+   
+    
+    
+
+    
+</aura:component>

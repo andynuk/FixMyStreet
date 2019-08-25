@@ -1,0 +1,65 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="FixMyStreetController" access="global" >
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>    
+    
+  	
+    <aura:attribute name="categoryClasses" type="String[]" />
+    <aura:attribute name="statusClasses" type="String[]" />
+    
+    
+    <aura:attribute name="selectedFilterStatusValue" type="String"/>
+    <aura:attribute name="selectedFilterCategoryValue" type="String"/>
+   
+    <aura:attribute name="fixmystreets" type="FixMyStreet__c[]"/>
+
+  	<aura:registerEvent name="onListChange" type="c:FixMyStreetFilterListChange"/>
+
+
+<article class="slds-card">
+  <div class="slds-card__header slds-grid">
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+      <div class="slds-media__figure">
+        <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
+			<lightning:icon iconName="utility:feed" size="small" class="popup-icon"/>
+        </span>
+      </div>
+      <div class="slds-media__body">
+        <h2>
+          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+            <span class="slds-text-heading_small">Selection</span>
+          </a>
+        </h2>
+      </div>
+    </header>
+  </div>
+  <div class="slds-card__body slds-card__body_inner">
+      
+
+      
+      
+    <lightning:select label="Select Category" value="{!v.selectedFilterCategoryValue}" onchange="{!c.changeHandler}">
+       <option text="All" value="All"/>
+       <aura:iteration items="{!v.categoryClasses}" var="categoryClass">
+            <option text="{#categoryClass.Name}" value="{#categoryClass.Id}"/>
+        </aura:iteration>
+    </lightning:select>    
+
+      <!--
+    <lightning:select label="Case Status" value="{!v.selectedFilterStatusValue}" onchange="{!c.changeHandler}">
+      <option text="All" value="All"/>
+      <aura:iteration items="{!v.statusClasses}" var="statusClass">
+            <option text="{#statusClass}" value="{#statusClass}"/>
+        </aura:iteration>
+    </lightning:select>    
+        -->      
+      
+    </div>
+</article>    
+    
+    
+
+    
+    
+    
+    
+    
+</aura:component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extends_RC11_Vehicle_Condition__c</fullName>
+    <description>Condition of the car</description>
+    <externalId>false</externalId>
+    <label>Vehicle Condition</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Good Condition</fullName>
+                <default>false</default>
+                <label>Good Condition</label>
+            </value>
+            <value>
+                <fullName>Average Condition</fullName>
+                <default>false</default>
+                <label>Average Condition</label>
+            </value>
+            <value>
+                <fullName>Poor Condition</fullName>
+                <default>false</default>
+                <label>Poor Condition</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

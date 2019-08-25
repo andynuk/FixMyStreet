@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to customer when call raise</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email to Customer</name>
+    <style>none</style>
+    <subject>Thank you for contacting Rutland County Council</subject>
+    <textOnly>Thank you for raising a call on our FixMyStreet service which we have now received.  
+
+You can see the details of your call at the folowing link:  
+
+https://rutland.fixmystreet.com/report/{!FixMyStreet__c.ServiceReqId__c} 
+
+The details of your call are:  
+
+Title:  {!FixMyStreet__c.title__c} 
+FixMyStreet Reference: {!FixMyStreet__c.service_request_id__c} 
+RCC Customer Services Reference: {!FixMyStreet__c.Case_Number__c} 
+Date Raised: {!FixMyStreet__c.requested_datetime__c}  
+
+We will provide updates to FixMyStreet.  
+
+Thanks you for using this service.  
+
+Customer Services 
+Rutland County Council 
+Catmose, 
+Oakham, 
+Rutland 
+LE15 6HP 
+t: 01572 722 577 
+e:enquiries@rutland.gov.uk</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

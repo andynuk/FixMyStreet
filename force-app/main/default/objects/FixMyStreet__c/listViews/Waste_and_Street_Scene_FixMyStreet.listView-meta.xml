@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waste_and_Street_Scene_FixMyStreet</fullName>
+    <columns>NAME</columns>
+    <columns>Case__c</columns>
+    <columns>FixMyStreetURL__c</columns>
+    <columns>service_request_id__c</columns>
+    <columns>Service_Area__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Waste and Street Scene FixMyStreet</label>
+</ListView>

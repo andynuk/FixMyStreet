@@ -1,0 +1,4 @@
+<!-- FixMyStreetFilterListChange  -->
+<aura:event type="APPLICATION" description="Event template">
+	<aura:attribute name="fixmystreets" type="FixMyStreet__c[]"/>
+</aura:event>

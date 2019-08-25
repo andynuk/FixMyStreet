@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="GetFixMyStreet">
+
+
+    <aura:attribute name="fms" type="FixMyStreet__c[]"/>
+    
+ 
+   	<aura:handler event="c:FixMyStreetFilterListChange" action="{!c.handleUpdateFilter}"/>
+    
+
+    <!-- The Leaflet map object -->
+    <aura:attribute name="map" type="Object"/>
+    <!-- The Leaflet markers -->
+    <aura:attribute name="markers" type="Object"/>
+
+
+    <aura:handler event="ltng:selectSObject" action="{!c.handleSelectedSObject}"/> 
+     <!-- Handling a standard application event -->
+  
+    <div aura:id="mapid" style="height: 600px;"></div>  
+
+      <ltng:require styles="/resource/leaflet/leaflet.css" 
+                  scripts="/resource/leaflet/leaflet.js"
+             	  afterScriptsLoaded="{!c.jsLoaded}" />
+    
+</aura:component>

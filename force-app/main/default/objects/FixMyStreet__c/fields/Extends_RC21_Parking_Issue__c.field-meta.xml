@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extends_RC21_Parking_Issue__c</fullName>
+    <externalId>false</externalId>
+    <label>Parking Issues</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Obstructive/Verge parking</fullName>
+                <default>false</default>
+                <label>Obstructive/Verge parking</label>
+            </value>
+            <value>
+                <fullName>Request new restrictions</fullName>
+                <default>false</default>
+                <label>Request new restrictions</label>
+            </value>
+            <value>
+                <fullName>Pay and Display machine damaged</fullName>
+                <default>false</default>
+                <label>Pay and Display machine damaged</label>
+            </value>
+            <value>
+                <fullName>Pay and Display machine not working</fullName>
+                <default>false</default>
+                <label>Pay and Display machine not working</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

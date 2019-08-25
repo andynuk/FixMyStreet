@@ -1,0 +1,63 @@
+<aura:component controller="RCCInternalReportSSDetailCtl" implements="lightning:availableForFlowScreens" access="global">
+
+    <aura:attribute name="streetsceneHistory" type="List" default=""/>
+    <aura:attribute name="ServiceArea" type="string" access="global"/>
+
+ 
+    <!-- https://developer.salesforce.com/blogs/developer-relations/2015/11/lightning-map-component-revisited.html -->
+    
+    <ltng:require styles="/resource/leaflet/leaflet.css" />    
+    <ltng:require scripts="/resource/leaflet/leaflet.js"  afterScriptsLoaded="{!c.jsLoaded}" />
+	
+    <!-- The Leaflet map object -->
+    <aura:attribute name="map" type="Object"/>
+    <!-- The Leaflet markers -->
+    <aura:attribute name="marker" type="Object"/>
+
+  
+
+        <lightning:card title="The map shows the current reports - please check that this issue has not already been reported.">
+ 		<div aura:id="mapid" style="height: 600px;"></div>  
+    </lightning:card>
+    
+    
+ <!--   
+    <lightning:card title="Previous Street Scene History" iconName="standard:event">
+ 
+    
+    
+<table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal">
+<thead>
+<tr class="slds-text-title_caps">
+<th scope="col">
+<div class="slds-truncate" title="Date">Date and Ref</div>
+</th>
+    <th scope="col">
+<div class="slds-truncate" title="Option">Details</div>
+</th>
+    </tr>
+</thead>
+
+        
+<tbody>
+<aura:iteration items="{!v.streetsceneHistory}" var="streetscene">
+    <tr class="slds-hint-parent">
+ 	   <th scope="row" data-label="Date and Ref">
+    		<div class="slds-truncate" title="Date"><lightning:formattedDateTime  title="Case Opened" year="numeric" month="short" day="2-digit" weekday="long" value="{!streetscene.requested_datetime__c}" /></div>
+    		<div class="slds-truncate" title="">{!streetscene.Name}</div>
+    	</th>
+        <td data-label="More Details">
+    		<div class="slds-truncate" title="">{!streetscene.Status__c}</div>
+    		<div class="slds-truncate" title="">{!streetscene.Location__c}</div>
+        </td>    
+    </tr>
+  </aura:iteration>
+
+    </tbody>
+</table>      
+   
+    </lightning:card>
+
+-->
+    
+</aura:component>

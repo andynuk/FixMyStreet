@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Area__c</fullName>
+    <externalId>false</externalId>
+    <label>Service Area</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adult Social Care</fullName>
+                <default>false</default>
+                <label>Adult Social Care</label>
+            </value>
+            <value>
+                <fullName>Benefits</fullName>
+                <default>false</default>
+                <label>Benefits</label>
+            </value>
+            <value>
+                <fullName>Blue Badges</fullName>
+                <default>false</default>
+                <label>Blue Badges</label>
+            </value>
+            <value>
+                <fullName>Children Social Care</fullName>
+                <default>false</default>
+                <label>Children Social Care</label>
+            </value>
+            <value>
+                <fullName>Council Tax</fullName>
+                <default>false</default>
+                <label>Council Tax</label>
+            </value>
+            <value>
+                <fullName>Democratic services</fullName>
+                <default>false</default>
+                <label>Democratic services</label>
+            </value>
+            <value>
+                <fullName>Elections</fullName>
+                <default>false</default>
+                <label>Elections</label>
+            </value>
+            <value>
+                <fullName>Environmental issues</fullName>
+                <default>false</default>
+                <label>Environmental issues</label>
+            </value>
+            <value>
+                <fullName>Highways</fullName>
+                <default>false</default>
+                <label>Highways</label>
+            </value>
+            <value>
+                <fullName>Housing</fullName>
+                <default>false</default>
+                <label>Housing</label>
+            </value>
+            <value>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+                <label>Licensing</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Parking</fullName>
+                <default>false</default>
+                <label>Parking</label>
+            </value>
+            <value>
+                <fullName>Planning</fullName>
+                <default>false</default>
+                <label>Planning</label>
+            </value>
+            <value>
+                <fullName>Registrars</fullName>
+                <default>false</default>
+                <label>Registrars</label>
+            </value>
+            <value>
+                <fullName>School Admissions</fullName>
+                <default>false</default>
+                <label>School Admissions</label>
+            </value>
+            <value>
+                <fullName>Transport</fullName>
+                <default>false</default>
+                <label>Transport</label>
+            </value>
+            <value>
+                <fullName>Waste</fullName>
+                <default>false</default>
+                <label>Waste</label>
+            </value>
+            <value>
+                <fullName>Street Scene</fullName>
+                <default>false</default>
+                <label>Street Scene</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

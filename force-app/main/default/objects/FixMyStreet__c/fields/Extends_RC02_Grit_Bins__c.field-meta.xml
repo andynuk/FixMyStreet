@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extends_RC02_Grit_Bins__c</fullName>
+    <externalId>false</externalId>
+    <label>Winter Maintenance</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Grit Bin – Damaged</fullName>
+                <default>true</default>
+                <label>Grit Bin – Damaged</label>
+            </value>
+            <value>
+                <fullName>Grit Bin – Empty</fullName>
+                <default>false</default>
+                <label>Grit Bin – Empty</label>
+            </value>
+            <value>
+                <fullName>Grit Bin  - Missing</fullName>
+                <default>false</default>
+                <label>Grit Bin  - Missing</label>
+            </value>
+            <value>
+                <fullName>Icy Footpath</fullName>
+                <default>false</default>
+                <label>Icy Footpath</label>
+            </value>
+            <value>
+                <fullName>Icy Road</fullName>
+                <default>false</default>
+                <label>Icy Road</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

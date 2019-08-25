@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>agency_sent_datetime__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>DateTime of fixmystreet entry format 2017-11-27T20:30:11.837838+00:00</inlineHelpText>
+    <label>Agency Sent Date Stamp</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

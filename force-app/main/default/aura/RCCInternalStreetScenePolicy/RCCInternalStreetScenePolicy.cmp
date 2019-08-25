@@ -1,0 +1,37 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+	    <aura:attribute name="ServiceArea" type="string" access="global"/>
+
+    <lightning:card title="{!v.ServiceArea + ' Policy'}" iconName="standard:event">
+    <div>
+	<aura:if isTrue="{! v.ServiceArea == 'Dead Animal'}">
+        The dead animal policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Abandoned Vehicles'}">
+        The Abandoned Vehicles policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Discarded Syringes'}">
+        The Discarded Syringes policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Graffiti'}">
+        The Graffiti policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Fly Posting'}">
+        The Fly Posting policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Fly Tipping'}">
+        The Fly Tipping policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Street Cleansing'}">
+        The  policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Missed Grass Cutting'}">
+        The Missed Grass Cutting policy is 
+    </aura:if>
+	<aura:if isTrue="{! v.ServiceArea == 'Trees or Vegetation'}">
+        The Trees or Vegetation policy is 
+    </aura:if>
+        
+    </div>            
+        
+    </lightning:card>
+</aura:component>

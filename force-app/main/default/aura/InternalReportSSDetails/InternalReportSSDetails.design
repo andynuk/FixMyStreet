@@ -1,0 +1,9 @@
+<design:component>
+	<design:attribute name="FixMyStreetId" label="FixMyStreetId"/>
+	<design:attribute name="Lat" label="Lat"/>
+    <design:attribute name="Long" label="Long"/>
+    <design:attribute name="SiteCode" label="SiteCode"/>
+    <design:attribute name="ServiceArea" label="ServiceArea"/>
+    <design:attribute name="newFixMyStreetId" label="newFixMyStreetId"/>
+    <design:attribute name="returnId" label="returnId"/>
+</design:component>

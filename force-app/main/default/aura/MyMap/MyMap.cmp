@@ -1,0 +1,48 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId">
+
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <force:recordData aura:id="recordLoader"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v.record}"
+      targetFields="{!v.simpleRecord}"
+      targetError="{!v.recordError}"
+      recordUpdated="{!c.recordUpdated}"
+      />
+
+  	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- https://developer.salesforce.com/blogs/developer-relations/2015/11/lightning-map-component-revisited.html -->
+    
+    <ltng:require styles="/resource/leaflet/leaflet.css" />    
+    <ltng:require scripts="/resource/leaflet/leaflet.js"  afterScriptsLoaded="{!c.jsLoaded}" />
+	
+    <!-- The Leaflet map object -->
+    <aura:attribute name="map" type="Object"/>
+    <!-- The Leaflet markers -->
+    <aura:attribute name="markers" type="Object"/>
+
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+    
+    <lightning:card >
+        <aura:set attribute="title">
+           {!v.simpleRecord.title__c}
+        </aura:set>
+		<div aura:id="mapid" style="height: 600px;"></div>  
+        //<div class="map" id="map" style="height: 380px;"></div>
+    </lightning:card>
+
+   
+ 
+
+</aura:component>

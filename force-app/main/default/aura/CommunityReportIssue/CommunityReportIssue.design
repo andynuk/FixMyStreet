@@ -1,0 +1,7 @@
+<design:component>
+	<design:attribute name="Lat" label="Lat"/>
+    <design:attribute name="Long" label="Long"/>
+    <design:attribute name="SiteCode" label="SiteCode"/>
+    <design:attribute name="ServiceArea" label="ServiceArea"/>
+    <design:attribute name="ServiceAreaId" label="ServiceAreaId"/>
+</design:component>

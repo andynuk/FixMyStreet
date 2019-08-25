@@ -1,0 +1,39 @@
+<aura:component controller="RCCInternalReportSSDetailCtl" implements="lightning:availableForFlowScreens" access="global">
+
+    <aura:attribute name="retFixMyStreetExtends" type="List" access="global"/>
+    <aura:attribute name="elementsFixMyStreetExtends" type="List" access="global"/>
+    <aura:attribute name="FixMyStreetId" type="string"/>
+    <aura:attribute name="returnId" type="string" default="ReturnId"/>
+    <aura:attribute name="newFixMyStreetId" type="string" access="global"/>
+    <aura:attribute name="Lat" type="Decimal"/>
+    <aura:attribute name="Long" type="Decimal"/>
+    <aura:attribute name="SiteCode" type="String" default=""/>
+    <aura:attribute name="ServiceArea" type="String"/>
+    <aura:attribute name="Confirmed" type="Boolean" default="false"/>
+    <aura:attribute name="submitmessage" type="string" default=""/>
+    
+    <!--<aura:attribute name="UserId" type="string"/>-->
+    <!-- these attributes used to look up the contact from the userid -->
+    <!-- <aura:attribute name="myContact" type="Contact" access="private"/> -->
+    <!-- recordData used to lookup the User and their associated contact -->
+    <!--<force:recordData aura:id="UserRecordService"
+                      recordId="{!v.UserId}"
+                      fields="Id,ContactId,Name"
+                      mode="VIEW"
+                      targetFields="{!v.User}"
+                      recordUpdated="{!c.handleUserLoaded}"
+                      /> -->
+    
+    <aura:handler name="init" value="{!this}" action="{!c.DoInit}"/>
+   
+      
+    {!v.body}
+    
+    <aura:if isTrue="{!v.Confirmed}">
+	    <div><lightning:button variant="brand" label="Next" onclick="{! c.handle1Click}" /></div>
+    <aura:set attribute="else">
+	    <div><lightning:button aura:id="submit" variant="brand" label="Save Record" onclick="{! c.handleClick}" /><br/></div>
+        <div>{!v.submitmessage}</div>
+    </aura:set>
+</aura:if> 
+</aura:component>

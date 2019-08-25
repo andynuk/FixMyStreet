@@ -1,0 +1,40 @@
+<aura:component >
+    
+	<aura:attribute name="fixmystreet" type="FixMyStreet__c"/>
+	<aura:attribute name="index" type="Integer"/>
+    
+    <aura:registerEvent name="navigateToSObject" type="force:navigateToSObject"/>
+    <aura:registerEvent name="selectSObject" type="ltng:selectSObject"/>
+   
+ 
+  	
+     <li aura:id="tile" class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1" data-id="{#v.index}">  
+        <div  class="slds-app-launcher__tile slds-text-link--reset slds-truncate">
+            <div class="slds-app-launcher__tile-figure">
+                 <span class="slds-avatar">
+                    <span class="slds-icon_container slds-icon-standard-account" title="{#v.fixmystreet.Name}">
+                        <lightning:icon iconName="standard:pricebook" size="medium" alternativeText="{#v.fixmystreet.Name}"/>
+                        <span class="slds-assistive-text">{#v.fixmystreet.Name}</span>
+                    </span>
+                </span>
+                <br/>
+ 			<div class="slds-no-flex">
+				<button class="slds-button slds-button_neutral" onclick="{!c.fixMyStreetSelected}">Details</button>
+			</div>
+           </div>
+            <div class="slds-app-launcher__tile-body">
+                <span class="slds-text-link" onclick="{!c.fixMyStreetSelected}">{#v.fixmystreet.Name}</span>
+				<aura:if isTrue="{#v.fixmystreet.Case__c != null}">
+                    <p><b>Case:</b> <span class="slds-text-link" onclick="{!c.fixMyStreetCaseSelected}">{#v.fixmystreet.Case__r.CaseNumber}</span></p>
+                 </aura:if>
+                <p><b>Title:</b> {#v.fixmystreet.title__c}</p>
+                <p><b>Type:</b> {#v.fixmystreet.Service_Area__r.Name}</p>
+                <p><b>FixMyStreet Status:</b> {#v.fixmystreet.Status__c}</p>
+                <p><b>Date:</b><lightning:formattedDateTime value="{#v.fixmystreet.requested_datetime__c}" year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit"/></p>
+            </div>
+        </div>
+	</li>
+
+
+
+</aura:component>

@@ -1,0 +1,23 @@
+Thank you for raising a call on our FixMyStreet service which we have now received. <br/><br/>
+
+You can see the details of your call at the folowing link:<br/><br/>
+
+https://rutland.fixmystreet.com/report/{!FixMyStreet__c.ServiceReqId__c}
+<br/><br/>
+<br/><br/>
+The details of your call are:<br/><br/>
+
+Title:  {!FixMyStreet__c.title__c}<br/>
+FixMyStreet Reference: {!FixMyStreet__c.service_request_id__c}<br/>
+RCC Customer Services Reference: {!FixMyStreet__c.Case_Number__c}<br/>
+Date Raised: {!FixMyStreet__c.requested_datetime__c}<br/>
+<br/><br/>
+We will provide updates to FixMyStreet. <br/><br/>
+<br/><br/>
+Thanks you for using this service.
+<br/><br/>
+Customer Services<br/>
+Rutland County Council<br/>
+Catmose, Oakham, Rutland LE15 6HP<br/>
+t: 01572 722 577 <br/>
+e:enquiries@rutland.gov.uk<br/>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Investigating</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>title__c</columns>
+    <columns>ServiceArea__c</columns>
+    <columns>service_request_id__c</columns>
+    <columns>ConfirmReference__c</columns>
+    <columns>FixMyStreetURL__c</columns>
+    <columns>Case__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Investigating,In progress,Planned,Action scheduled,Internal referral</value>
+    </filters>
+    <label>All Investigating</label>
+</ListView>

@@ -1,0 +1,42 @@
+<aura:component >
+    
+    <aura:attribute name="fixmystreet" type="FixMyStreet__c"/>
+    <aura:attribute name="extend" type="String[]"/>
+    
+    <aura:method name="showPopup" action="{!c.showPopup}"> 
+        <aura:attribute name="fixmystreet" type="FixMyStreet__c"/> 
+        <aura:attribute name="x" type="Decimal"/> 
+        <aura:attribute name="y" type="Decimal"/> 
+    </aura:method>
+
+    <aura:method name="hidePopup" action="{!c.hidePopup}"/> 
+    
+    <section aura:id="popup" class="slds-popover slds-nubbin--left slds-hidden" role="dialog">
+        <div class="slds-popover__body">
+            <lightning:layout >
+            	<lightning:layoutItem >
+                    <lightning:icon iconName="utility:feed" size="small" class="popup-icon"/>
+                </lightning:layoutItem>
+            	<lightning:layoutItem >
+                    <h3 class="slds-section__title">{!v.fixmystreet.title__c}</h3>
+                </lightning:layoutItem>
+            </lightning:layout>
+            <p><b>Description : </b> {!v.fixmystreet.Description__c}</p>
+            <p><b>Additional Information : </b> {!v.fixmystreet.Extends_Additional_Information__c}</p>
+            <p><b>Detail : </b> {!v.fixmystreet.detail__c}</p>
+            <p><b>Type : </b> {!v.fixmystreet.Service_Area__r.Name}</p>
+            <p><b>Status : </b> {!v.fixmystreet.Status__c}</p>
+            <p><b>Service Request Id :</b> {!v.fixmystreet.service_request_id__c}</p>
+            <p><b>Requested Date : </b> {!v.fixmystreet.requested_datetime__c}</p>
+            <p><b>Comments : </b> {!v.fixmystreet.Update_Comments__c}</p>
+              
+
+            <aura:iteration items="{!v.extend}" var="ex">
+	            <p><b>{!ex[0]} : </b> {!ex[1]}</p>
+            </aura:iteration>    
+            
+            
+ 
+        </div>
+    </section>	
+</aura:component>

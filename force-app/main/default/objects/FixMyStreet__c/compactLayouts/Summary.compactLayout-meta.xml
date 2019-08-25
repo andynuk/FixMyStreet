@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary</fullName>
+    <fields>title__c</fields>
+    <fields>Service_Area__c</fields>
+    <fields>requested_datetime__c</fields>
+    <fields>Status__c</fields>
+    <fields>Contact_Name__c</fields>
+    <fields>Contact_Email__c</fields>
+    <fields>Contact_Phone__c</fields>
+    <fields>Case__c</fields>
+    <label>Summary</label>
+</CompactLayout>

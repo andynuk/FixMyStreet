@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to back office</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email to BackOffice</name>
+    <style>none</style>
+    <subject>FixMyStreet {!FixMyStreet__c.Case_Number__c}-{!FixMyStreet__c.Name}</subject>
+    <textOnly>Service Area: {!FixMyStreet__c.Service_Area__c} 
+Title: {!FixMyStreet__c.title__c} 
+
+FixMyStreet Link: https://rutland.fixmystreet.com/report/{!FixMyStreet__c.ServiceReqId__c}  
+
+Contact Name: {!FixMyStreet__c.Contact_Name__c} 
+Contact Email: {!FixMyStreet__c.Contact_Email__c} 
+Contact Phone: {!FixMyStreet__c.Contact_Phone__c}  
+
+Date Requested: {!FixMyStreet__c.requested_datetime__c}  
+
+Lat: {!FixMyStreet__c.lat__c} 
+Long: {!FixMyStreet__c.long__c}  
+Google Map:  https://www.google.co.uk/maps/@{!FixMyStreet__c.lat__c},{!FixMyStreet__c.long__c},14z 
+
+Description: {!FixMyStreet__c.Description__c} 
+Detail: {!FixMyStreet__c.detail__c}  
+
+Status: {!FixMyStreet__c.Status__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

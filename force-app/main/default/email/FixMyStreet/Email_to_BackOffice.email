@@ -1,0 +1,19 @@
+Service Area: {!FixMyStreet__c.Service_Area__c}<br/>
+Title: {!FixMyStreet__c.title__c}<br/><br/>
+FixMyStreet Link: https://rutland.fixmystreet.com/report/{!FixMyStreet__c.ServiceReqId__c}<br/><br/>
+<br/>
+Contact Name: {!FixMyStreet__c.Contact_Name__c}<br/>
+Contact Email: {!FixMyStreet__c.Contact_Email__c}<br/>
+Contact Phone: {!FixMyStreet__c.Contact_Phone__c}<br/>
+<br/>
+Date Requested: {!FixMyStreet__c.requested_datetime__c}<br/>
+<br/>
+Lat: {!FixMyStreet__c.lat__c}<br/>
+Long: {!FixMyStreet__c.long__c}<br/>
+<br/><br/>
+Google Map:  https://www.google.co.uk/maps/@{!FixMyStreet__c.lat__c},{!FixMyStreet__c.long__c},14z<br/><br/>
+<br/>
+Description: {!FixMyStreet__c.Description__c}<br/>
+Detail: {!FixMyStreet__c.detail__c}<br/>
+<br/><br/>
+Status: {!FixMyStreet__c.Status__c}<br/>
