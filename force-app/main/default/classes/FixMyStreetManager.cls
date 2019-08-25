@@ -141,9 +141,6 @@ global with sharing class FixMyStreetManager {
             // the Service_Area__c needs matching
             string serv = (string) m.get('Service_Area__c');
                 system.debug(serv);
-            //FixMyStreetCategories__c service = database.query('select Id from FixMyStreetCategories__c where Id= :serv');
-              //  system.debug(service);
-            //fix.Service_Area__c  = service.Id;
             fix.Service_Area__c  = serv;
            // system.debug(fix);
 

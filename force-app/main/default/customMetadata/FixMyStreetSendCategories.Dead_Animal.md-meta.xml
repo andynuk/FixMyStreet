@@ -3,6 +3,10 @@
     <label>Dead Animal</label>
     <protected>false</protected>
     <values>
+        <field>InternalQueue__c</field>
+        <value xsi:type="xsd:string">Internal Street Scene Waste Queue</value>
+    </values>
+    <values>
         <field>Internal_Service_Area__c</field>
         <value xsi:type="xsd:string">Street Scene</value>
     </values>

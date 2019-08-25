@@ -3,6 +3,10 @@
     <label>Trees or Vegetation</label>
     <protected>false</protected>
     <values>
+        <field>InternalQueue__c</field>
+        <value xsi:type="xsd:string">Internal Forestry Queue</value>
+    </values>
+    <values>
         <field>Internal_Service_Area__c</field>
         <value xsi:type="xsd:string">Street Scene</value>
     </values>

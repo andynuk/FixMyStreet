@@ -5,6 +5,7 @@
     <columns>DeveloperName</columns>
     <columns>Service_Code__c</columns>
     <columns>Internal_Service_Area__c</columns>
+    <columns>InternalQueue__c</columns>
     <columns>Send_To_Confirm__c</columns>
     <columns>Live__c</columns>
     <filterScope>Everything</filterScope>

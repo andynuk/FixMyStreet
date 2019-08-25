@@ -34,7 +34,7 @@ global with sharing class FixMyStreetCreateCase {
         
         
         // need to look up friendly description of code from id
-        FixMyStreetCategories__c res_category =  database.query('SELECT service_code__c FROM FixMyStreetCategories__c where Live__C=true and Id=:FixMyStreetId');
+        FixMyStreetSendCategories__mdt res_category =  database.query('SELECT service_code__c FROM FixMyStreetSendCategories__mdt where Live__C=true and Id=:FixMyStreetId');
         string servicecategory = res_category.service_code__c;
             
         Map<String, Schema.SObjectField> fieldsResult = Schema.getGlobalDescribe().get('FixMyStreet__c').getDescribe().fields.getMap();

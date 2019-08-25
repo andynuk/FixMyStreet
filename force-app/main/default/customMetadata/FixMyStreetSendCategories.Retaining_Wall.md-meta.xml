@@ -3,8 +3,12 @@
     <label>Retaining Wall</label>
     <protected>false</protected>
     <values>
+        <field>InternalQueue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>Internal_Service_Area__c</field>
-        <value xsi:type="xsd:string">Street Scene</value>
+        <value xsi:type="xsd:string">Highways</value>
     </values>
     <values>
         <field>Live__c</field>
@@ -12,7 +16,7 @@
     </values>
     <values>
         <field>Send_To_Confirm__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>Service_Code__c</field>

@@ -30,6 +30,10 @@
                 <behavior>Edit</behavior>
                 <field>Live__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>InternalQueue__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

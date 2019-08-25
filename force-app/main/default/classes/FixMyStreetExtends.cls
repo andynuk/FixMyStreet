@@ -43,8 +43,8 @@ public class Child1 {
             List<FixMyStreetCategories__c> categoryList =  database.query('SELECT Name,Service_Code__c FROM FixMyStreetCategories__c where Live__C=true');
             for (FixMyStreetCategories__c category: categoryList) {
 	            Child1 c = new Child1();
-    	        c.name = category.name;
-        	    c.name_code = category.service_code__c;
+    	        c.name = category.Name;
+        	    c.name_code = category.Service_Code__c;
                 c.serviceid = category.id;
             	p.CategoryInformation.add(c);
             }
