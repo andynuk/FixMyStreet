@@ -5,7 +5,7 @@
         <description>FixMyStreet Email to BackOffice - Waste_Ben</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-5d2mlfdfn5cn@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
@@ -19,7 +19,7 @@
         <description>FixMyStreet Email to BackOffice - Highways</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-5d2mlfdfn5cn@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
@@ -31,7 +31,7 @@
         <description>FixMyStreet Email to BackOffice - Waste_Peter</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-5d2mlfdfn5cn@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
@@ -52,7 +52,7 @@
         <description>FixMyStreet Error</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-5d2mlfdfn5cn@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
