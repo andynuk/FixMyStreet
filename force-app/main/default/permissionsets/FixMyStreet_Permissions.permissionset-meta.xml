@@ -760,6 +760,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>FixMyStreetToConfirm__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>FixMyStreet_Comments__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

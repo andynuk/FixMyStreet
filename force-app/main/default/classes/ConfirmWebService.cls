@@ -656,14 +656,14 @@ global with sharing class ConfirmWebService {
          if (production)
         {
             //ConfirmUrl = 'https://connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
-            ConfirmUrl = 'https://development-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
+            ConfirmUrl = 'https://production-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquiri3s';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Production';
         }
         else
         {
             //ConfirmUrl = 'https://development-connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
-            ConfirmUrl = 'https://production-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
+            ConfirmUrl = 'https://development-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquir1es';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Development';
         }
@@ -749,7 +749,7 @@ global with sharing class ConfirmWebService {
 		}   
         system.debug('---MESSAGE FROM CONFIRM ----');
         System.debug(res.getBody());
-		logEntry = logEntry + res.getBody()+'\r\n';
+		logEntry = logEntry + 'Confirm Response: '+res.getBody()+'\r\n';
             system.debug('----END OF MESSAGE FROM CONFIRM---');
 
         

@@ -44,20 +44,21 @@ global class ConfirmUpdate Implements Schedulable {
         string ConfirmPassword;
         string ConfirmDatabaseId;
         
-        if (production)
+         if (production)
         {
             //ConfirmUrl = 'https://connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
-            ConfirmUrl = 'https://development-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
+            ConfirmUrl = 'https://production-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquiri3s';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Production';
         }
         else
         {
             //ConfirmUrl = 'https://development-connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
-            ConfirmUrl = 'https://production-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
+            ConfirmUrl = 'https://development-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquir1es';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Development';
         }
+
         
         
         string body = '<?xml version="1.0" encoding="utf-8"?>';
