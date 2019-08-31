@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "FixMyStreetToConfirm__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "export-FixMyStreetToConfirm__cs.json"
+        ]
+    }
+]

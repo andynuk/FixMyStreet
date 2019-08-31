@@ -60,8 +60,4 @@
         <name>standard__LightningBolt</name>
         <type>CustomApplication</type>
     </appMenuItems>
-    <appMenuItems>
-        <name>FixMyStreet</name>
-        <type>ConnectedApp</type>
-    </appMenuItems>
 </AppMenu>

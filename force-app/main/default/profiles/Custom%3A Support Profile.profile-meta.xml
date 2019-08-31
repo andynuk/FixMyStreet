@@ -13,6 +13,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FixMyStreetChangeRecordType</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>FixMyStreetController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -108,6 +112,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>FixMyStreetCategories__c.Service_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>FixMyStreetSendCategories__mdt.InternalQueue__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -937,8 +946,16 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>FixMyStreetToConfirm__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>FixMyStreet_Comments__c</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>FixMyStreet_Log__c</tab>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>FixMyStreet_Photo__c</tab>
@@ -947,6 +964,10 @@
     <tabVisibilities>
         <tab>FixMyStreet__c</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Street_LLPG__c</tab>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>

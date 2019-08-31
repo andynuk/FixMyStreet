@@ -644,27 +644,30 @@ global with sharing class ConfirmWebService {
         
         string orgId = UserInfo.getOrganizationId();
         system.debug('OrgId: '+orgId);
-        boolean production = true;
-        if (orgId == '00D6E0000000aMfUAI')
+        boolean production = false;
+        if (orgId == '00D0Y000002EzYY')
         {
-            production = false;
+            production = true;
         }
         string ConfirmUrl;
         string ConfirmPassword;
         string ConfirmDatabaseId;
         
-        if (production)
+         if (production)
         {
-            ConfirmUrl = 'https://connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            //ConfirmUrl = 'https://connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            ConfirmUrl = 'https://development-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquiri3s';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Production';
         }
         else
         {
-            ConfirmUrl = 'https://development-connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            //ConfirmUrl = 'https://development-connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            ConfirmUrl = 'https://production-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquir1es';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Development';
         }
+
         
         
             
@@ -734,7 +737,8 @@ global with sharing class ConfirmWebService {
                 system.debug('-------');
         		logError = true;
         		logEntry = logEntry + 'callout error on loading to Confirm\r\n';
-				logEntry = logEntry + res.toString();                
+                logEntry = logEntry + res.getBody()+'\r\n';
+				//logEntry = logEntry + res.toString();                
             }
         }
         else

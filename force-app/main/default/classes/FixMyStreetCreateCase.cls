@@ -256,10 +256,10 @@ global with sharing class FixMyStreetCreateCase {
         
         string orgId = UserInfo.getOrganizationId();
         system.debug('OrgId: '+orgId);
-        boolean production = true;
-        if (orgId == '00D6E0000000aMfUAI')
+        boolean production = false;
+        if (orgId == '00D0Y000002EzYY')
         {
-            production = false;
+            production = true;
         }
         
         
