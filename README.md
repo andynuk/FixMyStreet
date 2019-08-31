@@ -26,7 +26,7 @@ sfdx force:data:tree:import -u FixMyStreetScratch1  --plan data/export-FixMyStre
 
 Assign 'FisMyStreet Permissions' permission set to the logged in user
 
-
+manually change FixMyStreetToConfirm table to link to service areas
 
 ### More...
 
