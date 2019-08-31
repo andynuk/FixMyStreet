@@ -176,6 +176,9 @@ global with sharing class FixMyStreetManager {
                 }
                 
              retid.add(fix.Id);
+
+             // now load to confirm
+             ConfirmWebService.NewConfirmEnquiryFromId(fix.id,false);
             }
             
             
