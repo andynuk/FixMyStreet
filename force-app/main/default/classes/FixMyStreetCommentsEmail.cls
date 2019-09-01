@@ -62,11 +62,18 @@ global with sharing class FixMyStreetCommentsEmail {
     // First, reserve email capacity for the current Apex transaction to ensure
     // that we won't exceed our daily email limits when sending email after
     // the current transaction is committed.
+    Boolean proceed = false;
+    try {
     Messaging.reserveSingleEmailCapacity(2);
-
+    proceed = true;
+    } catch (Exception e) {
+        //handle your exception gracefully
+    }
     // Processes and actions involved in the Apex transaction occur next,
     // which conclude with sending a single email.
 
+    if (proceed)
+    {
     // Now create a new single email message object
     // that will send out a single email to the addresses in the To, CC & BCC list.
     Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
@@ -123,6 +130,7 @@ global with sharing class FixMyStreetCommentsEmail {
 
     // Send the email you have created.
     Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
-
+    }
+    
     }
 }

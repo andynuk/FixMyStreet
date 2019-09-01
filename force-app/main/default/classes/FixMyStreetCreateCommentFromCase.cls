@@ -29,11 +29,12 @@ global with sharing class FixMyStreetCreateCommentFromCase {
     Case caseComment = [SELECT FixMyStreet_Public_Comment__c FROM Case where Id =: caseId LIMIT 1];
 
     // get the FixMyStreet info
-    FixMyStreet__c fms = [SELECT Id,New_update_Comments__c,Name from FixMyStreet__c WHERE Case__c=: caseId LIMIT 1];
+    FixMyStreet__c fms = [SELECT Id,New_update_Comments__c,Name, Status__c from FixMyStreet__c WHERE Case__c=: caseId LIMIT 1];
 
     if (fms!=null)
     {   
         fms.New_update_Comments__c = caseComment.FixMyStreet_Public_Comment__c;
+        fms.Status__c = 'Closed';
         upsert fms;
     }
 
