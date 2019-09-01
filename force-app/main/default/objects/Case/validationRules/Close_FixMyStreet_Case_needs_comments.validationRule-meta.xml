@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_FixMyStreet_Case_needs_comments</fullName>
+    <active>true</active>
+    <description>This prevents fixmystreet records being closed without comments</description>
+    <errorConditionFormula>ISPICKVAL(Status , &#39;Closed&#39;)  &amp;&amp;  FixMyStreet_Public_Comment__c  = &#39;&#39;  &amp;&amp;   ISCHANGED(Status) &amp;&amp; RecordTypeId = &#39;01225000000JTr9AAG&#39;</errorConditionFormula>
+    <errorMessage>This case can only be closed if there is a publc comment in the record. Please note that this comment will be sent to FixMyStreet if this is where this was originally created.</errorMessage>
+</ValidationRule>

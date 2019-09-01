@@ -179,6 +179,8 @@ global with sharing class FixMyStreetManager {
 
              // now load to confirm
              ConfirmWebService.NewConfirmEnquiryFromId(fix.id,false);
+             // now setup new case
+             FixMyStreetCreateCase.NewCaseFromFixMyStreetId(fix.id,false);
             }
             
             

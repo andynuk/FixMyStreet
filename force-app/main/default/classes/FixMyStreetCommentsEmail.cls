@@ -42,16 +42,20 @@ global with sharing class FixMyStreetCommentsEmail {
                         requested_datetime__c,Contact_Name__c,Contact_Phone__c,Contact_Email__c,
                        lat__c, long__c,
                         Location__c, SiteCode__c,
-                       ConfirmReference__c,service_request_id__c,Number_of_Photos__c
+                       ConfirmReference__c,service_request_id__c,Number_of_Photos__c,FixMyStreetURL__c
                         FROM FixMyStreet__c 
                         WHERE FixMyStreet__c.id = :commentDetail.FixMyStreet__c
                         LIMIT 1
                        ];
         if (fixmystreet != null)
             {
-            fmsSummary = 'Reference: '+fixmystreet.Name+'<br/>';
-            fmsSummary = fmsSummary + 'Service Area: '+fixmystreet.Service_Area__c+'<br/>';
-            fmsSummary = fmsSummary + 'Title: '+fixmystreet.title__c+'<br/>';
+            if (fixmystreet.ConfirmReference__c!='')
+            {
+            fmsSummary = fmsSummary + 'Confirm Reference: '+fixmystreet.ConfirmReference__c+'<br/>';
+            }
+            fmsSummary = fmsSummary + 'Reference: '+fixmystreet.Name+'<br/>';
+             fmsSummary = fmsSummary + 'Title: '+fixmystreet.title__c+'<br/>';
+            fmsSummary = fmsSummary + 'Link: '+fixmystreet.FixMyStreetURL__c+'<br/>';
             } 
         }
 
@@ -70,14 +74,24 @@ global with sharing class FixMyStreetCommentsEmail {
     // Strings to hold the email addresses to which you are sending the email.
     String[] toAddresses = new String[] {'anix@rutland.gov.uk'}; 
     String[] ccAddresses = new String[] {'anix@rutland.gov.uk'};
-    
-    if (fixmystreet != null)
+
+    string orgId = UserInfo.getOrganizationId();
+    system.debug('OrgId: '+orgId);
+    boolean production = false;
+    if (orgId == '00D0Y000002EzYY')
+    {
+    production = true;
+    }
+
+    if (fixmystreet != null && production == true)
     {
         if (fixmystreet.ConfirmReference__c!=''){
-                toAddresses.add('andynuk@gmail.com');
+                toAddresses.add('rsalt@rutland.gov.uk');
             }
         else {
-                toAddresses.add('andynuk@gmail.com');
+                toAddresses.add('bthompson@rutland.gov.uk');
+                toAddresses.add('mloran@rutland.gov.uk');
+                toAddresses.add('skidd@rutland.gov.uk');
             }
     }
  
