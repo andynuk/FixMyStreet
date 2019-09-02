@@ -35,7 +35,8 @@ global with sharing class FixMyStreetCreateCommentFromCase {
     {   
         fms.New_update_Comments__c = caseComment.FixMyStreet_Public_Comment__c;
         fms.Status__c = 'Closed';
-        upsert fms;
+        fms.Update_FixMyStreet__c = true;
+       upsert fms;
     }
 
     }

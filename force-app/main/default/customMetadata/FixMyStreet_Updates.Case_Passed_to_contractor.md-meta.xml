@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Case - Passed to Contractor</label>
+    <protected>false</protected>
+    <values>
+        <field>Closed__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Fixed__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Status__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Update_Text__c</field>
+        <value xsi:type="xsd:string">Having investigated this issue, this has now been passed on to our contractor to action. You will receive a further update once this action is complete.</value>
+    </values>
+</CustomMetadata>

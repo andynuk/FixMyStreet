@@ -49,7 +49,7 @@ global with sharing class FixMyStreetCommentsEmail {
                        ];
         if (fixmystreet != null)
             {
-            if (fixmystreet.ConfirmReference__c!='')
+            if (fixmystreet.ConfirmReference__c!=null)
             {
             fmsSummary = fmsSummary + 'Confirm Reference: '+fixmystreet.ConfirmReference__c+'<br/>';
             }
@@ -131,6 +131,6 @@ global with sharing class FixMyStreetCommentsEmail {
     // Send the email you have created.
     Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
     }
-    
+
     }
 }

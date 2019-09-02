@@ -7,11 +7,15 @@
         <default>false</default>
     </values>
     <values>
-        <fullName>Closed - No Resolution</fullName>
+        <fullName>Investigating</fullName>
         <default>false</default>
     </values>
     <values>
         <fullName>New</fullName>
         <default>true</default>
+    </values>
+    <values>
+        <fullName>Passed to contractor</fullName>
+        <default>false</default>
     </values>
 </BusinessProcess>

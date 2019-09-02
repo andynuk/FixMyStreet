@@ -31,4 +31,16 @@
         <label>Closed - No Resolution</label>
         <closed>true</closed>
     </standardValue>
+    <standardValue>
+        <fullName>Passed to contractor</fullName>
+        <default>false</default>
+        <label>Passed to contractor</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Investigating</fullName>
+        <default>false</default>
+        <label>Investigating</label>
+        <closed>false</closed>
+    </standardValue>
 </StandardValueSet>

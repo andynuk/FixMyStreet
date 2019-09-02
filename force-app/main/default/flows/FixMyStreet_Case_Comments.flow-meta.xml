@@ -13,6 +13,65 @@
         <locationY>200</locationY>
         <actionName>FixMyStreetCreateCommentFromCase</actionName>
         <actionType>apex</actionType>
+        <connector>
+            <targetReference>myDecision3</targetReference>
+        </connector>
+        <inputParameters>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>caseId</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>maxOccurs</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>objectType</name>
+                <value>
+                    <stringValue/>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>caseId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>apexSelection</name>
+            <value>
+                <stringValue>FixMyStreet Comments from Case</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_4_A1</name>
+        <label>UpdateStandardStatements</label>
+        <locationX>400</locationX>
+        <locationY>200</locationY>
+        <actionName>FixMyStreetCommentsStatusChange</actionName>
+        <actionType>apex</actionType>
         <inputParameters>
             <processMetadataValues>
                 <name>dataType</name>
@@ -62,7 +121,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision</targetReference>
+            <targetReference>isChangedDecision5_myRule_4_Status</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
@@ -83,9 +142,41 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myDecision</targetReference>
+                <targetReference>isChangedDecision5_myRule_4_Status</targetReference>
             </connector>
             <label>isChangedRule_2_myRule_1_Status</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>isChangedDecision5_myRule_4_Status</name>
+        <label>isChangedDecision5_myRule_4_Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_5_myRule_4_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.Status</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision</targetReference>
+            </connector>
+            <label>isChangedRule_5_myRule_4_Status</label>
         </rules>
     </decisions>
     <decisions>
@@ -99,6 +190,9 @@
         <label>myDecision</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision3</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_1</name>
@@ -171,8 +265,60 @@
             <label>Closed Comments</label>
         </rules>
     </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision3</name>
+        <label>myDecision3</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_5_myRule_4_Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_4_A1</targetReference>
+            </connector>
+            <label>Other Status Changes</label>
+        </rules>
+    </decisions>
     <description>Takes the comment on a case or status change and pushes to FixMyStreet</description>
-    <interviewLabel>FixMyStreet_Case_Comments-2_InterviewLabel</interviewLabel>
+    <interviewLabel>FixMyStreet_Case_Comments-3_InterviewLabel</interviewLabel>
     <label>FixMyStreet Case Comments</label>
     <processMetadataValues>
         <name>ObjectType</name>
