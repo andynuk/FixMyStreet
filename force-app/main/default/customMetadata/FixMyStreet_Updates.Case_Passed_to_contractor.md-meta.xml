@@ -7,6 +7,10 @@
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
+        <field>FMS_Status__c</field>
+        <value xsi:type="xsd:string">Action Scheduled</value>
+    </values>
+    <values>
         <field>Fixed__c</field>
         <value xsi:type="xsd:boolean">false</value>
     </values>

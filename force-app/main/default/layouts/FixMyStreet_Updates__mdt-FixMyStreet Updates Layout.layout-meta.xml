@@ -30,6 +30,10 @@
                 <behavior>Edit</behavior>
                 <field>Fixed__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>FMS_Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

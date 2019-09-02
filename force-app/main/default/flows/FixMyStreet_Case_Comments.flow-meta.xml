@@ -116,8 +116,8 @@
         </inputParameters>
     </actionCalls>
     <decisions>
-        <name>isChangedDecision2_myRule_1_Status</name>
-        <label>isChangedDecision2_myRule_1_Status</label>
+        <name>isChangedDecision2_myRule_1_FixMyStreet_Public_Comment_c</name>
+        <label>isChangedDecision2_myRule_1_FixMyStreet_Public_Comment_c</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
@@ -125,7 +125,7 @@
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>isChangedRule_2_myRule_1_Status</name>
+            <name>isChangedRule_2_myRule_1_FixMyStreet_Public_Comment_c</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_old</leftValueReference>
@@ -135,16 +135,16 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>myVariable_old.Status</leftValueReference>
+                <leftValueReference>myVariable_old.FixMyStreet_Public_Comment__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>myVariable_current.Status</elementReference>
+                    <elementReference>myVariable_current.FixMyStreet_Public_Comment__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>isChangedDecision5_myRule_4_Status</targetReference>
             </connector>
-            <label>isChangedRule_2_myRule_1_Status</label>
+            <label>isChangedRule_2_myRule_1_FixMyStreet_Public_Comment_c</label>
         </rules>
     </decisions>
     <decisions>
@@ -201,13 +201,13 @@
                 <processMetadataValues>
                     <name>inputDataType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
                     <name>leftHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>String</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -219,13 +219,13 @@
                 <processMetadataValues>
                     <name>rightHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.Status</leftValueReference>
+                <leftValueReference>isChangedRule_2_myRule_1_FixMyStreet_Public_Comment_c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Closed</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -238,7 +238,7 @@
                 <processMetadataValues>
                     <name>leftHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>String</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -253,16 +253,16 @@
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>isChangedRule_2_myRule_1_Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>myVariable_current.FixMyStreet_Public_Comment__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>Closed Comments</label>
+            <label>New comments</label>
         </rules>
     </decisions>
     <decisions>
@@ -318,7 +318,7 @@
         </rules>
     </decisions>
     <description>Takes the comment on a case or status change and pushes to FixMyStreet</description>
-    <interviewLabel>FixMyStreet_Case_Comments-3_InterviewLabel</interviewLabel>
+    <interviewLabel>FixMyStreet_Case_Comments-4_InterviewLabel</interviewLabel>
     <label>FixMyStreet Case Comments</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -345,7 +345,7 @@
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
-    <startElementReference>isChangedDecision2_myRule_1_Status</startElementReference>
+    <startElementReference>isChangedDecision2_myRule_1_FixMyStreet_Public_Comment_c</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>

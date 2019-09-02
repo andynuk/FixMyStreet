@@ -158,6 +158,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.Record_Type_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.Service_Area_Detail__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -319,6 +324,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>FixMyStreet_Updates__mdt.Closed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>FixMyStreet_Updates__mdt.FMS_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -812,6 +822,9 @@
     <layoutAssignments>
         <layout>Case-Case Layout</layout>
         <recordType>Case.FixMyStreet</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CaseClose-Close Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>FixMyStreetCategories__c-FixMyStreetCategories Layout</layout>

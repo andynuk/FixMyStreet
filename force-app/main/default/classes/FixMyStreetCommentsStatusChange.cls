@@ -37,7 +37,7 @@ global with sharing class FixMyStreetCommentsStatusChange {
     // search for say 'Case - Investigating'
     string findCaseStatus = 'Case - '+caseDetails.Status;
 
-    List<FixMyStreet_Updates__mdt> fms_Status_Description = [SELECT MasterLabel, Update_Text__c, Closed__c, Fixed__c  FROM FixMyStreet_Updates__mdt WHERE MasterLabel = :findCaseStatus LIMIT 1];
+    List<FixMyStreet_Updates__mdt> fms_Status_Description = [SELECT MasterLabel, Update_Text__c, FMS_Status__c  FROM FixMyStreet_Updates__mdt WHERE MasterLabel = :findCaseStatus LIMIT 1];
 
     
     if (fms_Status_Description.size() != 0  && fms.size() != 0)
@@ -49,13 +49,9 @@ global with sharing class FixMyStreetCommentsStatusChange {
         fmsUpdate.Update_FixMyStreet__c = true;
 
         fmsUpdate.New_update_Comments__c = newComments;
-        if (fms_Status_Description[0].Closed__c)
+        if (fms_Status_Description[0].FMS_Status__c != null)
             {
-            fmsUpdate.Status__c = 'Closed';
-            }
-        if (fms_Status_Description[0].Fixed__c)
-            {
-            fmsUpdate.Status__c = 'Fixed';
+            fmsUpdate.Status__c = fms_Status_Description[0].FMS_Status__c;
             }
         upsert fmsUpdate;
         }
