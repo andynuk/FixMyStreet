@@ -20,12 +20,19 @@ global with sharing class FixMyStreetChangeRecordType {
         FixMyStreet__c fms = [SELECT Service_Area__r.Service_Code__c, RecordTypeId FROM FixMyStreet__c WHERE Id=:fixmystreetId LIMIT 1];
         string rec = fms.Service_Area__r.Service_Code__c;
 
+        Schema.RecordTypeInfo recordInfo = Schema.getGlobalDescribe().get('FixMyStreet__c').getDescribe().getRecordTypeInfosByName().get(rec);
 
-        Id newRecordTypeId = Schema.getGlobalDescribe().get('FixMyStreet__c').getDescribe().getRecordTypeInfosByName().get(rec).getRecordTypeId();
+        if (recordInfo != null)
+            {
 
-        fms.RecordTypeId = newRecordTypeId; 
-        upsert fms;
+            Id newRecordTypeId = Schema.getGlobalDescribe().get('FixMyStreet__c').getDescribe().getRecordTypeInfosByName().get(rec).getRecordTypeId();
 
+            if (newRecordTypeId != null)
+                {
+                fms.RecordTypeId = newRecordTypeId; 
+                upsert fms;
+                }
+            }
     }
 
     

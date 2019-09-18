@@ -130,6 +130,7 @@ global with sharing class FixMyStreetCreateCase {
 		FixMyStreet__c fixmystreet;
         fixmystreet = [SELECT id, Name, Service_Area__c,Service_Area__r.Name,title__c,Description__c,Easting__c, Northing__c,
                         requested_datetime__c,Contact_Name__c,Contact_Phone__c,Contact_Email__c,service_request_id__c,
+                        Number_of_Photos__c,
                        lat__c, long__c,
                         Location__c, SiteCode__c,
                        ConfirmReference__c
