@@ -10,7 +10,7 @@
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_BackOffice</template>
     </alerts>
     <alerts>
@@ -23,7 +23,7 @@
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_BackOffice</template>
     </alerts>
     <alerts>
@@ -36,7 +36,7 @@
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_BackOffice</template>
     </alerts>
     <alerts>
@@ -45,7 +45,7 @@
         <description>FixMyStreet Email to Customer</description>
         <protected>false</protected>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_Customer</template>
     </alerts>
     <alerts>
