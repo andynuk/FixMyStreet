@@ -59,6 +59,7 @@ public class FixMyStreetCreateCommentFromCase_Test {
       FixMyStreetCreateCommentFromCase.doComment(requests);
 
         newCase.Status = 'Closed';
+        newCase.FixMyStreet_Public_Comment__c = 'public comment';
         upsert newCase;
       FixMyStreetCreateCommentFromCase.doComment(requests);
 
