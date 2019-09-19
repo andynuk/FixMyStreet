@@ -7,6 +7,7 @@
     <columns>Update_Text__c</columns>
     <columns>Closed__c</columns>
     <columns>Fixed__c</columns>
+    <columns>FMS_Status__c</columns>
     <filterScope>Everything</filterScope>
     <label>updates</label>
 </ListView>

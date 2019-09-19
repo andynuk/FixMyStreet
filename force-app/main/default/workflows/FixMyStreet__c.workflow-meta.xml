@@ -2,40 +2,41 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>FixMyStreet_Email_to_BackOffice_Ben</fullName>
+        <ccEmails>anix@rutland.gov.uk</ccEmails>
         <description>FixMyStreet Email to BackOffice - Waste_Ben</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-k32lw4qknjiw@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_BackOffice</template>
     </alerts>
     <alerts>
         <fullName>FixMyStreet_Email_to_BackOffice_Highways</fullName>
-        <ccEmails>highways@rutland.gov.uk</ccEmails>
         <ccEmails>anix@rutland.gov.uk</ccEmails>
         <description>FixMyStreet Email to BackOffice - Highways</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-k32lw4qknjiw@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_BackOffice</template>
     </alerts>
     <alerts>
         <fullName>FixMyStreet_Email_to_BackOffice_Peter</fullName>
+        <ccEmails>anix@rutland.gov.uk</ccEmails>
         <description>FixMyStreet Email to BackOffice - Waste_Peter</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-k32lw4qknjiw@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_BackOffice</template>
     </alerts>
     <alerts>
@@ -44,7 +45,7 @@
         <description>FixMyStreet Email to Customer</description>
         <protected>false</protected>
         <senderAddress>anix@rutland.gov.uk</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType><!--orgwideemail-->
         <template>FixMyStreet/Email_to_Customer</template>
     </alerts>
     <alerts>
@@ -52,7 +53,7 @@
         <description>FixMyStreet Error</description>
         <protected>false</protected>
         <recipients>
-            <recipient>anix-rv7r@force.com</recipient>
+            <recipient>test-k32lw4qknjiw@example.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

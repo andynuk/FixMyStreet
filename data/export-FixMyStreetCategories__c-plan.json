@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "FixMyStreetCategories__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "export-FixMyStreetCategories__cs.json"
+        ]
+    }
+]

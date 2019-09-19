@@ -381,7 +381,7 @@ global with sharing class ConfirmWebService {
                         requested_datetime__c,Contact_Name__c,Contact_Phone__c,Contact_Email__c,
                        lat__c, long__c,
                         Location__c, SiteCode__c,
-                       ConfirmReference__c
+                       ConfirmReference__c,service_request_id__c,Number_of_Photos__c
                         FROM FixMyStreet__c 
                         WHERE FixMyStreet__c.id = :fixmystreetId
                         LIMIT 1
@@ -505,6 +505,18 @@ global with sharing class ConfirmWebService {
         
         string fullDescription = '';
         string newline = '&#xD;';
+
+        if (fixmystreet.service_request_id__c>0)
+        {
+            string ref = String.valueOf(fixmystreet.service_request_id__c);
+            fullDescription = fullDescription + 'Reported by: National FixMyStreet'+newline;
+            fullDescription = fullDescription + ref + newline;
+        }
+        else {
+            fullDescription = fullDescription + 'Reported by: Customer Services Team'+newline;
+        }
+
+
         if (fixmystreet.title__c != null)
             {
             fullDescription = fullDescription + 'Summary:'+fixmystreet.title__c+newline;
@@ -512,6 +524,10 @@ global with sharing class ConfirmWebService {
         if (fixmystreet.Description__c != null)
             {
 	        fullDescription = fullDescription + 'Description:'+fixmystreet.Description__c+newline;
+            }
+        if (fixmystreet.Number_of_Photos__c>0)
+            {
+	        fullDescription = fullDescription + 'Photos are attached to this record'+newline;
             }
         
         for (Child indList : resultList)
@@ -548,6 +564,9 @@ global with sharing class ConfirmWebService {
             X = String.valueOf(fixmystreet.Easting__c);
             Y = String.valueOf(fixmystreet.Northing__c);
         }
+
+        /*
+        This code should get east ing and northing but cannot be run as webservice not available
         else
         {
             //https://www.bgs.ac.uk/data/webservices/convertform.cfm
@@ -596,7 +615,7 @@ global with sharing class ConfirmWebService {
                 }
        // end of easting northing section
         }
-    
+        */
         
         Datetime dateEnquiryLogtime;
         if (fixmystreet.requested_datetime__c != null)
@@ -644,27 +663,30 @@ global with sharing class ConfirmWebService {
         
         string orgId = UserInfo.getOrganizationId();
         system.debug('OrgId: '+orgId);
-        boolean production = true;
-        if (orgId == '00D6E0000000aMfUAI')
+        boolean production = false;
+        if (orgId == '00D0Y000002EzYY')
         {
-            production = false;
+            production = true;
         }
         string ConfirmUrl;
         string ConfirmPassword;
         string ConfirmDatabaseId;
         
-        if (production)
+         if (production)
         {
-            ConfirmUrl = 'https://connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            //ConfirmUrl = 'https://connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            ConfirmUrl = 'https://production-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquiri3s';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Production';
         }
         else
         {
-            ConfirmUrl = 'https://development-connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            //ConfirmUrl = 'https://development-connector.ondemand.confirm.co.uk/connectorwebservice/ConfirmConnector.asmx';
+            ConfirmUrl = 'https://development-awswebservices.ondemand.confirm.co.uk/confirm/connector/confirmconnector.asmx';
             ConfirmPassword = 'Enquir1es';
             ConfirmDatabaseId = 'Rutland County Council and Tarmac - Development';
         }
+
         
         
             
@@ -734,7 +756,8 @@ global with sharing class ConfirmWebService {
                 system.debug('-------');
         		logError = true;
         		logEntry = logEntry + 'callout error on loading to Confirm\r\n';
-				logEntry = logEntry + res.toString();                
+                logEntry = logEntry + res.getBody()+'\r\n';
+				//logEntry = logEntry + res.toString();                
             }
         }
         else
@@ -745,7 +768,7 @@ global with sharing class ConfirmWebService {
 		}   
         system.debug('---MESSAGE FROM CONFIRM ----');
         System.debug(res.getBody());
-		logEntry = logEntry + res.getBody()+'\r\n';
+		logEntry = logEntry + 'Confirm Response: '+res.getBody()+'\r\n';
             system.debug('----END OF MESSAGE FROM CONFIRM---');
 
         

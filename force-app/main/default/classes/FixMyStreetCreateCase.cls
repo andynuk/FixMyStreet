@@ -34,7 +34,7 @@ global with sharing class FixMyStreetCreateCase {
         
         
         // need to look up friendly description of code from id
-        FixMyStreetCategories__c res_category =  database.query('SELECT service_code__c FROM FixMyStreetCategories__c where Live__C=true and Id=:FixMyStreetId');
+        FixMyStreetCategories__c res_category =  database.query('SELECT service_code__c FROM FixMyStreetCategories__c where Live__c=true and Id=:FixMyStreetId');
         string servicecategory = res_category.service_code__c;
             
         Map<String, Schema.SObjectField> fieldsResult = Schema.getGlobalDescribe().get('FixMyStreet__c').getDescribe().fields.getMap();
@@ -130,6 +130,7 @@ global with sharing class FixMyStreetCreateCase {
 		FixMyStreet__c fixmystreet;
         fixmystreet = [SELECT id, Name, Service_Area__c,Service_Area__r.Name,title__c,Description__c,Easting__c, Northing__c,
                         requested_datetime__c,Contact_Name__c,Contact_Phone__c,Contact_Email__c,service_request_id__c,
+                        Number_of_Photos__c,
                        lat__c, long__c,
                         Location__c, SiteCode__c,
                        ConfirmReference__c
@@ -209,6 +210,12 @@ global with sharing class FixMyStreetCreateCase {
                         }
                     }
                 }
+
+        if (fixmystreet.Number_of_Photos__c>0)
+            {
+	        fullDescription = fullDescription + 'Photos are attached to this record'+newline;
+            }
+                            
         system.debug(fullDescription); 
 
 
@@ -256,10 +263,10 @@ global with sharing class FixMyStreetCreateCase {
         
         string orgId = UserInfo.getOrganizationId();
         system.debug('OrgId: '+orgId);
-        boolean production = true;
-        if (orgId == '00D6E0000000aMfUAI')
+        boolean production = false;
+        if (orgId == '00D0Y000002EzYY')
         {
-            production = false;
+            production = true;
         }
         
         

@@ -1,21 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <assignments>
-        <name>myVariable_waitStartTimeAssignment</name>
-        <label>myVariable_waitStartTimeAssignment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
-            <operator>Assign</operator>
+    <actionCalls>
+        <processMetadataValues>
+            <name>apexSelection</name>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <stringValue>FixMyStreetChangeRecordType</stringValue>
             </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>myDecision</targetReference>
-        </connector>
-    </assignments>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>changeRecordType</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <actionName>FixMyStreetChangeRecordType</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>fixmystreetId</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>maxOccurs</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>objectType</name>
+                <value>
+                    <stringValue/>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>fixmystreetId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -35,40 +75,16 @@
             <name>myRule_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
+                <leftValueReference>formula_myRule_1</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC01</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>RC01</label>
+            <label>ChangeRecordtype</label>
         </rules>
     </decisions>
     <decisions>
@@ -117,13 +133,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC06</stringValue>
+                    <stringValue>RC05</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_11_A1</targetReference>
             </connector>
-            <label>RC06</label>
+            <label>RC05</label>
         </rules>
     </decisions>
     <decisions>
@@ -172,13 +188,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC07</stringValue>
+                    <stringValue>RC06</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_13_A1</targetReference>
             </connector>
-            <label>RC07</label>
+            <label>RC06</label>
         </rules>
     </decisions>
     <decisions>
@@ -227,13 +243,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC08</stringValue>
+                    <stringValue>RC07</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_15_A1</targetReference>
             </connector>
-            <label>RC08</label>
+            <label>RC07</label>
         </rules>
     </decisions>
     <decisions>
@@ -282,13 +298,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC09</stringValue>
+                    <stringValue>RC08</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_17_A1</targetReference>
             </connector>
-            <label>RC09</label>
+            <label>RC08</label>
         </rules>
     </decisions>
     <decisions>
@@ -337,13 +353,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC10</stringValue>
+                    <stringValue>RC09</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_19_A1</targetReference>
             </connector>
-            <label>RC10</label>
+            <label>RC09</label>
         </rules>
     </decisions>
     <decisions>
@@ -392,13 +408,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC02</stringValue>
+                    <stringValue>RC01</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_3_A1</targetReference>
             </connector>
-            <label>RC02</label>
+            <label>RC01</label>
         </rules>
     </decisions>
     <decisions>
@@ -447,13 +463,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC11</stringValue>
+                    <stringValue>RC10</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_21_A1</targetReference>
             </connector>
-            <label>RC11</label>
+            <label>RC10</label>
         </rules>
     </decisions>
     <decisions>
@@ -502,13 +518,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC12</stringValue>
+                    <stringValue>RC11</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_23_A1</targetReference>
             </connector>
-            <label>RC12</label>
+            <label>RC11</label>
         </rules>
     </decisions>
     <decisions>
@@ -557,13 +573,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC13</stringValue>
+                    <stringValue>RC12</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_25_A1</targetReference>
             </connector>
-            <label>RC13</label>
+            <label>RC12</label>
         </rules>
     </decisions>
     <decisions>
@@ -612,13 +628,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC14</stringValue>
+                    <stringValue>RC13</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_27_A1</targetReference>
             </connector>
-            <label>RC14</label>
+            <label>RC13</label>
         </rules>
     </decisions>
     <decisions>
@@ -667,13 +683,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC15</stringValue>
+                    <stringValue>RC14</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_29_A1</targetReference>
             </connector>
-            <label>RC15</label>
+            <label>RC14</label>
         </rules>
     </decisions>
     <decisions>
@@ -722,13 +738,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC16</stringValue>
+                    <stringValue>RC15</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_31_A1</targetReference>
             </connector>
-            <label>RC16</label>
+            <label>RC15</label>
         </rules>
     </decisions>
     <decisions>
@@ -777,13 +793,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC17</stringValue>
+                    <stringValue>RC16</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_33_A1</targetReference>
             </connector>
-            <label>RC17</label>
+            <label>RC16</label>
         </rules>
     </decisions>
     <decisions>
@@ -832,13 +848,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC18</stringValue>
+                    <stringValue>RC17</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_35_A1</targetReference>
             </connector>
-            <label>RC18</label>
+            <label>RC17</label>
         </rules>
     </decisions>
     <decisions>
@@ -887,13 +903,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC19</stringValue>
+                    <stringValue>RC18</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_37_A1</targetReference>
             </connector>
-            <label>RC19</label>
+            <label>RC18</label>
         </rules>
     </decisions>
     <decisions>
@@ -942,13 +958,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC20</stringValue>
+                    <stringValue>RC19</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_39_A1</targetReference>
             </connector>
-            <label>RC20</label>
+            <label>RC19</label>
         </rules>
     </decisions>
     <decisions>
@@ -997,13 +1013,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC03</stringValue>
+                    <stringValue>RC02</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_5_A1</targetReference>
             </connector>
-            <label>RC03</label>
+            <label>RC02</label>
         </rules>
     </decisions>
     <decisions>
@@ -1052,13 +1068,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC21</stringValue>
+                    <stringValue>RC20</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_41_A1</targetReference>
             </connector>
-            <label>RC21</label>
+            <label>RC20</label>
         </rules>
     </decisions>
     <decisions>
@@ -1107,13 +1123,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC22</stringValue>
+                    <stringValue>RC21</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_43_A1</targetReference>
             </connector>
-            <label>RC22</label>
+            <label>RC21</label>
         </rules>
     </decisions>
     <decisions>
@@ -1162,13 +1178,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC23</stringValue>
+                    <stringValue>RC22</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_45_A1</targetReference>
             </connector>
-            <label>RC23</label>
+            <label>RC22</label>
         </rules>
     </decisions>
     <decisions>
@@ -1182,9 +1198,64 @@
         <label>myDecision46</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision48</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_47</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RC23</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_47_A1</targetReference>
+            </connector>
+            <label>RC23</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>24.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision48</name>
+        <label>myDecision48</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_49</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -1218,7 +1289,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_47_A1</targetReference>
+                <targetReference>myRule_49_A1</targetReference>
             </connector>
             <label>RC24</label>
         </rules>
@@ -1269,13 +1340,13 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC04</stringValue>
+                    <stringValue>RC03</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_7_A1</targetReference>
             </connector>
-            <label>RC04</label>
+            <label>RC03</label>
         </rules>
     </decisions>
     <decisions>
@@ -1324,17 +1395,22 @@
                 <leftValueReference>myVariable_current.Service_Area__r.Service_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>RC05</stringValue>
+                    <stringValue>RC04</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_9_A1</targetReference>
             </connector>
-            <label>RC05</label>
+            <label>RC04</label>
         </rules>
     </decisions>
     <description>Changes Record Type and Creates Case</description>
-    <interviewLabel>FixMyStreet_Record_Type-5_InterviewLabel</interviewLabel>
+    <formulas>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>true</expression>
+    </formulas>
+    <interviewLabel>FixMyStreet_Record_Type-2_InterviewLabel</interviewLabel>
     <label>FixMyStreet Record Type</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1369,6 +1445,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1380,9 +1459,92 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
         <name>myRule_11_A1</name>
-        <label>rc06</label>
+        <label>rc05</label>
         <locationX>1100</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0120Y000000NGpdQAG</stringValue>
+            </value>
+        </inputAssignments>
+        <object>FixMyStreet__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[FixMyStreet__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_13_A1</name>
+        <label>rc06</label>
+        <locationX>1300</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -1443,6 +1605,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1454,9 +1619,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_13_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_15_A1</name>
         <label>rc07</label>
-        <locationX>1300</locationX>
+        <locationX>1500</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -1517,6 +1685,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1528,9 +1699,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_15_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_17_A1</name>
         <label>RC08</label>
-        <locationX>1500</locationX>
+        <locationX>1700</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -1591,6 +1765,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1602,9 +1779,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_17_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_19_A1</name>
         <label>rc09</label>
-        <locationX>1700</locationX>
+        <locationX>1900</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -1665,6 +1845,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1676,9 +1859,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_19_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_21_A1</name>
         <label>Rc10</label>
-        <locationX>1900</locationX>
+        <locationX>2100</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -1739,78 +1925,7 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[FixMyStreet__c]</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>RC01</label>
-        <locationX>100</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Record Type ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>RecordType</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>RecordTypeId</field>
-            <value>
-                <stringValue>0120Y000000NGpZQAW</stringValue>
-            </value>
-        </inputAssignments>
-        <object>FixMyStreet__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
+            <name>extraTypeInfo</name>
         </processMetadataValues>
         <processMetadataValues>
             <name>isChildRelationship</name>
@@ -1824,9 +1939,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_21_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_23_A1</name>
         <label>rc11</label>
-        <locationX>2100</locationX>
+        <locationX>2300</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -1887,6 +2005,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1898,9 +2019,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_23_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_25_A1</name>
         <label>rc12</label>
-        <locationX>2300</locationX>
+        <locationX>2500</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -1961,6 +2085,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1972,9 +2099,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_25_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_27_A1</name>
         <label>rc13</label>
-        <locationX>2500</locationX>
+        <locationX>2700</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2035,6 +2165,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2046,9 +2179,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_27_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_29_A1</name>
         <label>rc14</label>
-        <locationX>2700</locationX>
+        <locationX>2900</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2109,6 +2245,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2120,9 +2259,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_29_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_31_A1</name>
         <label>rc15</label>
-        <locationX>2900</locationX>
+        <locationX>3100</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2183,6 +2325,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2194,9 +2339,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_31_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_33_A1</name>
         <label>rc16</label>
-        <locationX>3100</locationX>
+        <locationX>3300</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2257,6 +2405,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2268,9 +2419,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_33_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_35_A1</name>
         <label>rc17</label>
-        <locationX>3300</locationX>
+        <locationX>3500</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2331,6 +2485,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2342,9 +2499,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_35_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_37_A1</name>
         <label>rc18</label>
-        <locationX>3500</locationX>
+        <locationX>3700</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2405,6 +2565,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2416,9 +2579,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_37_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_39_A1</name>
         <label>rc19</label>
-        <locationX>3700</locationX>
+        <locationX>3900</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2479,6 +2645,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2490,9 +2659,92 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_39_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_3_A1</name>
+        <label>RC01</label>
+        <locationX>300</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0120Y000000NGpZQAW</stringValue>
+            </value>
+        </inputAssignments>
+        <object>FixMyStreet__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[FixMyStreet__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_41_A1</name>
         <label>rc20</label>
-        <locationX>3900</locationX>
+        <locationX>4100</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2553,78 +2805,7 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[FixMyStreet__c]</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_3_A1</name>
-        <label>RC02</label>
-        <locationX>300</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Record Type ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>RecordType</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>RecordTypeId</field>
-            <value>
-                <stringValue>0120Y000000NGpaQAG</stringValue>
-            </value>
-        </inputAssignments>
-        <object>FixMyStreet__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
+            <name>extraTypeInfo</name>
         </processMetadataValues>
         <processMetadataValues>
             <name>isChildRelationship</name>
@@ -2638,9 +2819,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_41_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_43_A1</name>
         <label>rc21</label>
-        <locationX>4100</locationX>
+        <locationX>4300</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2701,6 +2885,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2712,9 +2899,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_43_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_45_A1</name>
         <label>rc22</label>
-        <locationX>4300</locationX>
+        <locationX>4500</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2775,6 +2965,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2786,9 +2979,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_45_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_47_A1</name>
         <label>rc23</label>
-        <locationX>4500</locationX>
+        <locationX>4700</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2849,6 +3045,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2860,9 +3059,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_47_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_49_A1</name>
         <label>rc24</label>
-        <locationX>4700</locationX>
+        <locationX>4900</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2923,6 +3125,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2934,9 +3139,92 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
         <name>myRule_5_A1</name>
-        <label>RC03</label>
+        <label>RC02</label>
         <locationX>500</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0120Y000000NGpaQAG</stringValue>
+            </value>
+        </inputAssignments>
+        <object>FixMyStreet__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[FixMyStreet__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_7_A1</name>
+        <label>RC03</label>
+        <locationX>700</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2997,6 +3285,9 @@
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -3008,9 +3299,12 @@
                 <stringValue>[FixMyStreet__c]</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_7_A1</name>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_9_A1</name>
         <label>RC04</label>
-        <locationX>700</locationX>
+        <locationX>900</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -3063,81 +3357,7 @@
         </inputAssignments>
         <object>FixMyStreet__c</object>
     </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[FixMyStreet__c]</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_9_A1</name>
-        <label>rc05</label>
-        <locationX>900</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Record Type ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>RecordType</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>RecordTypeId</field>
-            <value>
-                <stringValue>0120Y000000NGpdQAG</stringValue>
-            </value>
-        </inputAssignments>
-        <object>FixMyStreet__c</object>
-    </recordUpdates>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <startElementReference>myDecision</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -3154,15 +3374,5 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>FixMyStreet__c</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_waitStartTimeVariable</name>
-        <dataType>DateTime</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>$Flow.CurrentDateTime</elementReference>
-        </value>
     </variables>
 </Flow>

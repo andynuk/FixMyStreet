@@ -1,0 +1,295 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef1"
+            },
+            "Name": "Footway or Footpath",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": false
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef2"
+            },
+            "Name": "Roads and Highways",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC01"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef3"
+            },
+            "Name": "Winter Maintenance",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC02"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef4"
+            },
+            "Name": "Gully or Manhole",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC03"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef5"
+            },
+            "Name": "Trees or Vegetation",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Forestry Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC04"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef6"
+            },
+            "Name": "Footway or Footpath",
+            "Internal_Service_Area__c": "Street Scene",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC05"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef7"
+            },
+            "Name": "Retaining Wall",
+            "Internal_Service_Area__c": "Street Scene",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC06"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef8"
+            },
+            "Name": "Road Signage",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC07"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef9"
+            },
+            "Name": "Street Furniture",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC08"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef10"
+            },
+            "Name": "Street Name Plate",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC09"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef11"
+            },
+            "Name": "Crash Barriers",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC10"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef12"
+            },
+            "Name": "Abandoned Vehicles",
+            "Internal_Service_Area__c": "Waste",
+            "InternalQueue__c": "Internal Waste Team Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC11"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef13"
+            },
+            "Name": "Street Lighting",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC13"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef14"
+            },
+            "Name": "Dead Animal",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC14"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef15"
+            },
+            "Name": "Missed Grass Cutting",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC19"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef16"
+            },
+            "Name": "Discarded Syringes",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC15"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef17"
+            },
+            "Name": "Fly Posting",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC16"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef18"
+            },
+            "Name": "Fly Tipping",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC17"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef19"
+            },
+            "Name": "Graffiti",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC18"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef20"
+            },
+            "Name": "Street Cleansing",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC20"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef21"
+            },
+            "Name": "Parking",
+            "Internal_Service_Area__c": "Street Scene",
+            "InternalQueue__c": "Internal Street Scene Waste Queue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false,
+            "Service_Code__c": "RC21"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef22"
+            },
+            "Name": "Rights of Way",
+            "Internal_Service_Area__c": "Street Scene",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC22"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef23"
+            },
+            "Name": "Kerbs",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC23"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef24"
+            },
+            "Name": "Traffic Signals",
+            "Internal_Service_Area__c": "Highways",
+            "Live__c": true,
+            "Send_to_Confirm__c": true,
+            "Service_Code__c": "RC24"
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef25"
+            },
+            "Name": "General Waste Issue",
+            "Live__c": true,
+            "Send_to_Confirm__c": false
+        },
+        {
+            "attributes": {
+                "type": "FixMyStreetCategories__c",
+                "referenceId": "FixMyStreetCategories__cRef26"
+            },
+            "Name": "Litter Bins",
+            "Live__c": true,
+            "Send_to_Confirm__c": false
+        }
+    ]
+}

@@ -153,7 +153,7 @@ public class FixMyStreetTestManager {
    Test.startTest();
        
     FixMyStreetCategories__c  tempService = new FixMyStreetCategories__c (
-        	Name = 'Test Service',
+        	Name = 'Fly Tipping',
     		Service_Code__c = 'Temp',
         	Send_to_Confirm__c = false
     );
