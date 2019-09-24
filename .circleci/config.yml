@@ -1,8 +1,10 @@
 version: 2
 jobs:
   buildonly:
+    # docker:
+    #   - image: circleci/node:latest
     docker:
-      - image: circleci/node:latest
+      - image: salestrip/sfdx-cli      
     steps:
       - checkout
       - run:
@@ -15,8 +17,10 @@ jobs:
           name: Delete Scratch Org
           command: . build/delete-scratch-org.sh
   build:
+     # docker:
+    #   - image: circleci/node:latest
     docker:
-      - image: circleci/node:latest
+      - image: salestrip/sfdx-cli
     steps:
       - checkout
       - run:
@@ -34,8 +38,10 @@ jobs:
           name: Delete Scratch Org
           command: . build/delete-scratch-org.sh
   deploy-prod:
+    # docker:
+    #   - image: circleci/node:latest
     docker:
-    - image: circleci/node:latest
+      - image: salestrip/sfdx-cli   
     steps:
       - checkout
       - run:
@@ -48,8 +54,10 @@ jobs:
           name: Deploy to Production
           command: . build/deploy-prod.sh
   deploy-UAT:
+    # docker:
+    #   - image: circleci/node:latest
     docker:
-    - image: circleci/node:latest
+      - image: salestrip/sfdx-cli   
     steps:
       - checkout
       - run:
