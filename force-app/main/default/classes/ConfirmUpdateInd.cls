@@ -1,4 +1,4 @@
-global class ConfirmUpdate Implements Schedulable {
+global class ConfirmUpdateInd Implements Schedulable {
 
     
     public Interface IScheduleDispatched
@@ -8,7 +8,7 @@ global class ConfirmUpdate Implements Schedulable {
     
     global void execute(SchedulableContext sc)
     {
-		ConfirmUpdates();
+		ConfirmUpdatesInd();
 	}
 	
    // @future (callout=true)
@@ -21,13 +21,14 @@ global class ConfirmUpdate Implements Schedulable {
 	
     
     @future (callout=true)
-    public static void ConfirmUpdates() {
+    public static void ConfirmUpdatesInd() {
 
+        string enquiryRef = '11002134';
 
-        system.debug('Collecting updates from Confirm');
+        system.debug('Collecting update from Confirm');
 		
         Boolean logError = false;
-        string logEntry = 'Collecting updates from Confirm\r\n';
+        string logEntry = 'Collecting specific update from Confirm\r\n';
         
         HttpRequest req = new HttpRequest();
         HttpResponse res = new HttpResponse();
@@ -72,7 +73,9 @@ global class ConfirmUpdate Implements Schedulable {
 		body = body + '<DatabaseId>'+ConfirmDatabaseId+'</DatabaseId>';
 		body = body + '</Authentication>';
 		body = body + '<Operation>';
-		body = body + '<GetNewEnquiryStatusChanges/>';
+		body = body + '<GetEnquiry>';
+        body = body + '<EnquiryNumber>'+enquiryRef+'</EnquiryNumber>';
+        body = body + '</GetEnquiry>';
 		body = body + '</Operation>';
 		body = body + '</Request>';
 		body = body + '</ProcessOperationsRequest>';
@@ -111,14 +114,13 @@ global class ConfirmUpdate Implements Schedulable {
             testresult = testresult + '<ProcessOperationsResult xmlns="http://www.confirm.co.uk/schema/am/connector/webservice">';
             testresult = testresult + '<Response SchemaVersion="1.4" xmlns="">';
             testresult = testresult + '<OperationResponse>';
-            testresult = testresult + '<GetNewEnquiryStatusChangesResponse>';
-            testresult = testresult + '<UpdatedEnquiry>';
+            testresult = testresult + '<GetEnquiryResponse>';
+            testresult = testresult + '<Enquiry>';
             testresult = testresult + '<EnquiryNumber>11000155</EnquiryNumber>';
             testresult = testresult + '<ExternalSystemNumber>1</ExternalSystemNumber>';
             testresult = testresult + '<ExternalSystemReference>FMS-RCC-00276_061220181233</ExternalSystemReference>';
             testresult = testresult + '<EnquiryX>486532.17</EnquiryX>';
             testresult = testresult + '<EnquiryY>309943.66</EnquiryY>';
-            testresult = testresult + '<EnquiryStatusLog>';
             testresult = testresult + '<EnquiryLogNumber>2</EnquiryLogNumber>';
             testresult = testresult + '<EnquiryStatusCode>2800</EnquiryStatusCode>';
             testresult = testresult + '<EnquiryStatusName>Defect Found: 7 Day Priority</EnquiryStatusName>';
@@ -129,9 +131,8 @@ global class ConfirmUpdate Implements Schedulable {
             testresult = testresult + '<StatusFollowUpTime>2018-12-08T15:11:48</StatusFollowUpTime>';
             testresult = testresult + '<LoggedByUserName>Andy Nix</LoggedByUserName>';
             testresult = testresult + '<LoggedByUserId>RUTAR00030</LoggedByUserId>';
-            testresult = testresult + '</EnquiryStatusLog>';
-            testresult = testresult + '</UpdatedEnquiry>';
-            testresult = testresult + '</GetNewEnquiryStatusChangesResponse>';
+            testresult = testresult + '</Enquiry>';
+            testresult = testresult + '</GetEnquiryResponse>';
             testresult = testresult + '</OperationResponse>';
             testresult = testresult + '</Response>';
             testresult = testresult + '</ProcessOperationsResult>';
@@ -189,10 +190,10 @@ result = result + '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-env
 result = result + '</soap:Envelope>';
 */       
         
-        result = result.replace('<GetNewEnquiryStatusChangesResponse />', '<GetNewEnquiryStatusChangesResponse/>');
+        //result = result.replace('<GetNewEnquiryStatusChangesResponse />', '<GetNewEnquiryStatusChangesResponse/>');
         
-        integer start = result.indexOf('<OperationResponse>');
-        integer finish = result.indexOf('</OperationResponse>') + 20;
+        integer start = result.indexOf('<Enquiry>');
+        integer finish = result.indexOf('</Enquiry>') + 10;
         
         
         result = result.mid(start, finish-start);
@@ -270,22 +271,13 @@ result = result + '</soap:Envelope>';
         
         for (Dom.XMLNode child : rootNode.getChildElements()) {
             system.debug(child.getName());
-            if (child.getName() == 'GetNewEnquiryStatusChangesResponse')
-            {
-	        for (Dom.XMLNode lowerChild : child.getChildElements()) 
-            	{
-                    system.debug(lowerChild.getName());
-                    Dom.XMLNode enquiry = lowerChild.getChildElement('EnquiryNumber',null);
-                    if (enquiry != null)
-                    	{
-                            system.debug('-----FOUND NODE TO PROCESS----');
-                        system.debug(enquiry);
-                    	system.debug(enquiry.getText());
-                        UpdateFixMyStreet(enquiry.getText(),lowerChild);
-                        }
-            	}
+            if (child.getName() == 'EnquiryStatusCode')
+                {
+                system.debug('-----FOUND Status TO PROCESS----');
+                system.debug(child.getText());
+                UpdateFixMyStreet(enquiryRef,child.getText());
+                }
             }
-        }
  	 }
      catch (Exception e)
      {
@@ -298,62 +290,17 @@ result = result + '</soap:Envelope>';
       {
           ConfirmLogEntry(logEntry);
       }  
-        
-        //system.debug(doc);
-        
-        //Map<String, Object> m = (Map<String, object>) JSON.deserializeUntyped(result);
-        
-        //System.debug(m);
-        
-    //    Dom.Document doc = res.getBodyDocument();
-    //    System.debug('Dom.Document ====>');
-    //    System.debug(doc);
-    //    Dom.XMLNode node = doc.getRootElement();
-    //    System.debug('node ====>');
-    //    System.debug(node);
+    
     }
 
-    public static  void UpdateFixMyStreet(string enquiry,Dom.XMLNode lowerChild)
+    public static  void UpdateFixMyStreet(string enquiryref,string status)
     {
-        /*
-                        <UpdatedEnquiry>
-                            <EnquiryNumber>11000155</EnquiryNumber>
-                            <ExternalSystemNumber>1</ExternalSystemNumber>
-                            <ExternalSystemReference>FMS-RCC-00276_061220181233</ExternalSystemReference>
-                            <EnquiryX>486532.17</EnquiryX>
-                            <EnquiryY>309943.66</EnquiryY>
-                            <EnquiryStatusLog>
-                                <EnquiryLogNumber>2</EnquiryLogNumber>
-                                <EnquiryStatusCode>2700</EnquiryStatusCode>
-                                <EnquiryStatusName>Defect Found: 7 Day Priority</EnquiryStatusName>
-                                <AssignedOfficerCode>CUSE</AssignedOfficerCode>
-                                <AssignedOfficerName>Customer Services Default</AssignedOfficerName>
-                                <LoggedTime>2018-12-07T15:11:52</LoggedTime>
-                                <LogEffectiveTime>2018-12-07T15:11:48</LogEffectiveTime>
-                                <StatusFollowUpTime>2018-12-08T15:11:48</StatusFollowUpTime>
-                                <LoggedByUserName>Andy Nix</LoggedByUserName>
-                                <LoggedByUserId>RUTAR00030</LoggedByUserId>
-                            </EnquiryStatusLog>
-                            <EnquiryStatusLog>
-                                <EnquiryLogNumber>2</EnquiryLogNumber>
-                                <EnquiryStatusCode>2700</EnquiryStatusCode>
-                                <EnquiryStatusName>Defect Found: 7 Day Priority</EnquiryStatusName>
-                                <AssignedOfficerCode>CUSE</AssignedOfficerCode>
-                                <AssignedOfficerName>Customer Services Default</AssignedOfficerName>
-                                <LoggedTime>2018-12-07T15:11:52</LoggedTime>
-                                <LogEffectiveTime>2018-12-07T15:11:48</LogEffectiveTime>
-                                <StatusFollowUpTime>2018-12-08T15:11:48</StatusFollowUpTime>
-                                <LoggedByUserName>Andy Nix</LoggedByUserName>
-                                <LoggedByUserId>RUTAR00030</LoggedByUserId>
-                            </EnquiryStatusLog>
-                        </UpdatedEnquiry>        
-        */
+    // we have a enquiry ref and a confrim status so fist update the record
         
 
-       	FixMyStreet__c[] fixmystreets = [SELECT id, Name, Service_Area__c,title__c,
-                       ConfirmReference__c, New_update_Comments__c, Update_FixMyStreet__c 
+       	FixMyStreet__c[] fixmystreets = [SELECT id, Confirm_Status__c
                         FROM FixMyStreet__c 
-                        WHERE ConfirmReference__c = :enquiry
+                        WHERE ConfirmReference__c = :enquiryref
                         LIMIT 1
                        ];
 
@@ -362,7 +309,7 @@ result = result + '</soap:Envelope>';
             return;
         }
 
-           	FixMyStreet__c fixmystreet = fixmystreets[0];
+        FixMyStreet__c fixmystreet = fixmystreets[0];
         
        	//FixMyStreet__c fixmystreet;
         //fixmystreet = [SELECT id, Name, Service_Area__c,title__c,
@@ -375,33 +322,35 @@ result = result + '</soap:Envelope>';
         system.debug(fixmystreet);
         if (fixmystreet != null)
         {
-            Dom.XMLNode enquiryStatusLog = lowerChild.getChildElement('EnquiryStatusLog',null);
-            if (enquiryStatusLog != null)
+            if (fixmystreet.Confirm_Status__c != status && fixmystreet.Confirm_Status__c !='')
             {
-	            Dom.XMLNode enquiryStatusCode = enquiryStatusLog.getChildElement('EnquiryStatusCode',null);
-                system.debug(enquiryStatusCode.getText());
-                string code = enquiryStatusCode.getText();
-                FixMyStreet_Updates__mdt fms_Update;
-                fms_Update = [SELECT MasterLabel, Update_Text__c, Closed__c, Fixed__c  FROM FixMyStreet_Updates__mdt WHERE MasterLabel = :code LIMIT 1];
-                if (fms_Update != null)
-                    {
-                    string newComments = fms_Update.Update_Text__c;
-                    system.debug(newComments);
-                    fixmystreet.New_update_Comments__c = newComments;
-                    fixmystreet.Update_FixMyStreet__c = true;
-                    if (fms_Update.Closed__c == true)
-                    {
-                        fixmystreet.Status__c = 'Closed';
-                    }
-                    if (fms_Update.Fixed__c == true)
-                    {
-                        fixmystreet.Status__c = 'Fixed';
-                    }
-                    upsert fixmystreet;
-                    }
+            fixmystreet.Confirm_Status__c = status;
+
+            FixMyStreet_Updates__mdt fms_Update;
+            fms_Update = [SELECT MasterLabel, Update_Text__c, Closed__c, Fixed__c  FROM FixMyStreet_Updates__mdt WHERE MasterLabel = :status LIMIT 1];
+            if (fms_Update != null)
+                {
+                string newComments = fms_Update.Update_Text__c;
+                system.debug(newComments);
+                fixmystreet.New_update_Comments__c = newComments;
+                fixmystreet.Update_FixMyStreet__c = true;
+                if (fms_Update.Closed__c == true)
+                {
+                    fixmystreet.Status__c = 'Closed';
+                }
+                if (fms_Update.Fixed__c == true)
+                {
+                    fixmystreet.Status__c = 'Fixed';
+                }
+                }
+            upsert fixmystreet;
+            }
+            if (fixmystreet.Confirm_Status__c != status && fixmystreet.Confirm_Status__c =='')
+            {
+            fixmystreet.Confirm_Status__c = status;
+            upsert fixmystreet;
             }
         }
-        
     }
 
     // run ConfirmWebService.testMe(); from Execute Anonymous to test
