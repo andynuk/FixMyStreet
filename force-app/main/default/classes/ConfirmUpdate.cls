@@ -113,7 +113,7 @@ global class ConfirmUpdate Implements Schedulable {
             testresult = testresult + '<OperationResponse>';
             testresult = testresult + '<GetNewEnquiryStatusChangesResponse>';
             testresult = testresult + '<UpdatedEnquiry>';
-            testresult = testresult + '<EnquiryNumber>11000155</EnquiryNumber>';
+            testresult = testresult + '<EnquiryNumber>11002134</EnquiryNumber>';
             testresult = testresult + '<ExternalSystemNumber>1</ExternalSystemNumber>';
             testresult = testresult + '<ExternalSystemReference>FMS-RCC-00276_061220181233</ExternalSystemReference>';
             testresult = testresult + '<EnquiryX>486532.17</EnquiryX>';
@@ -121,6 +121,18 @@ global class ConfirmUpdate Implements Schedulable {
             testresult = testresult + '<EnquiryStatusLog>';
             testresult = testresult + '<EnquiryLogNumber>2</EnquiryLogNumber>';
             testresult = testresult + '<EnquiryStatusCode>2800</EnquiryStatusCode>';
+            testresult = testresult + '<EnquiryStatusName>Defect Found: 7 Day Priority</EnquiryStatusName>';
+            testresult = testresult + '<AssignedOfficerCode>CUSE</AssignedOfficerCode>';
+            testresult = testresult + '<AssignedOfficerName>Customer Services Default</AssignedOfficerName>';
+            testresult = testresult + '<LoggedTime>2018-12-07T15:11:52</LoggedTime>';
+            testresult = testresult + '<LogEffectiveTime>2018-12-07T15:11:48</LogEffectiveTime>';
+            testresult = testresult + '<StatusFollowUpTime>2018-12-08T15:11:48</StatusFollowUpTime>';
+            testresult = testresult + '<LoggedByUserName>Andy Nix</LoggedByUserName>';
+            testresult = testresult + '<LoggedByUserId>RUTAR00030</LoggedByUserId>';
+            testresult = testresult + '</EnquiryStatusLog>';
+            testresult = testresult + '<EnquiryStatusLog>';
+            testresult = testresult + '<EnquiryLogNumber>2</EnquiryLogNumber>';
+            testresult = testresult + '<EnquiryStatusCode>2500</EnquiryStatusCode>';
             testresult = testresult + '<EnquiryStatusName>Defect Found: 7 Day Priority</EnquiryStatusName>';
             testresult = testresult + '<AssignedOfficerCode>CUSE</AssignedOfficerCode>';
             testresult = testresult + '<AssignedOfficerName>Customer Services Default</AssignedOfficerName>';
@@ -265,6 +277,11 @@ result = result + '</soap:Envelope>';
     </soap:Body>
 </soap:Envelope>
 */
+
+
+
+
+
  try {
         DOM.XmlNode rootNode=doc.getRootElement();
         
@@ -375,6 +392,36 @@ result = result + '</soap:Envelope>';
         system.debug(fixmystreet);
         if (fixmystreet != null)
         {
+            for (Dom.XMLNode child : lowerChild.getChildElements()) {
+                if (child.getName() == 'EnquiryStatusLog')
+                    {
+                    Dom.XMLNode enquiryStatusCode = child.getChildElement('EnquiryStatusCode',null);
+                    system.debug(enquiryStatusCode.getText());
+                    string code = enquiryStatusCode.getText();
+                    fixmystreet.Confirm_Status__c = code;
+                    FixMyStreet_Updates__mdt fms_Update;
+                    fms_Update = [SELECT MasterLabel, Update_Text__c, Closed__c, Fixed__c  FROM FixMyStreet_Updates__mdt WHERE MasterLabel = :code LIMIT 1];
+                    if (fms_Update != null)
+                        {
+                        string newComments = fms_Update.Update_Text__c;
+                        system.debug(newComments);
+                        fixmystreet.New_update_Comments__c = newComments;
+                        fixmystreet.Update_FixMyStreet__c = true;
+                        if (fms_Update.Closed__c == true)
+                        {
+                            fixmystreet.Status__c = 'Closed';
+                        }
+                        if (fms_Update.Fixed__c == true)
+                        {
+                            fixmystreet.Status__c = 'Fixed';
+                        }
+                        }                        
+                    }
+            }
+        upsert fixmystreet;
+        }
+
+            /* Original code only processed on status log change
             Dom.XMLNode enquiryStatusLog = lowerChild.getChildElement('EnquiryStatusLog',null);
             if (enquiryStatusLog != null)
             {
@@ -400,7 +447,7 @@ result = result + '</soap:Envelope>';
                     upsert fixmystreet;
                     }
             }
-        }
+            */
         
     }
 

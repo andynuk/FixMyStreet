@@ -270,7 +270,7 @@ result = result + '</soap:Envelope>';
         DOM.XmlNode rootNode=doc.getRootElement();
         
         for (Dom.XMLNode child : rootNode.getChildElements()) {
-            system.debug(child.getName());
+            //system.debug(child.getName());
             if (child.getName() == 'EnquiryStatusCode')
                 {
                 system.debug('-----FOUND Status TO PROCESS----');
@@ -322,8 +322,14 @@ result = result + '</soap:Envelope>';
         system.debug(fixmystreet);
         if (fixmystreet != null)
         {
+            if (fixmystreet.Confirm_Status__c == status)
+            {
+            system.debug('----Current Confirm Status matches Salesforce no action required ---');
+            }
+
             if (fixmystreet.Confirm_Status__c != status && fixmystreet.Confirm_Status__c !='')
             {
+            system.debug('----Current Confirm Status does not match Salesforce ---');
             fixmystreet.Confirm_Status__c = status;
 
             FixMyStreet_Updates__mdt fms_Update;
@@ -343,11 +349,6 @@ result = result + '</soap:Envelope>';
                     fixmystreet.Status__c = 'Fixed';
                 }
                 }
-            upsert fixmystreet;
-            }
-            if (fixmystreet.Confirm_Status__c != status && fixmystreet.Confirm_Status__c =='')
-            {
-            fixmystreet.Confirm_Status__c = status;
             upsert fixmystreet;
             }
         }
